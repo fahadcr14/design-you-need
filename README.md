@@ -257,7 +257,7 @@ The reference files are the heart of this skill. To improve them:
 
 1. Find an award-winning web design project
 2. Analyze it using the scoring criteria in `references/anti-slop-rules.md`
-3. Add it to the relevant category file with a full recipe
+3. Add it to the relevant category file with a full md sub skill
 4. Submit a PR
 
 ---
