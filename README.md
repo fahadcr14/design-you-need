@@ -270,7 +270,7 @@ MIT
 
 <div align="center">
 
-**Built by someone who got tired of AI making every website look the same.**
+**Built by me who got tired of AI making every website look the same.**
 
 *Award-winning designs analyzed. Slop patterns identified. Craft lessons extracted. Now it's a skill.*
 
