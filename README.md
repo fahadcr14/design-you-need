@@ -4,21 +4,25 @@
 
 ### Stop shipping AI slop. Start shipping designs that look like a human made them.
 
-A [Claude Code](https://docs.anthropic.com/en/docs/claude-code) skill that replaces every generic, template-looking frontend AI builds with production-quality design — derived from forensic analysis of **399 award-winning Dribbble projects**.
+A skill for AI coding tools that replaces every generic, template-looking frontend with production-quality design — derived from forensic analysis of award-winning Dribbble projects.
+
+Works with **Claude Code** | **Cursor** | **Windsurf** | **Cline** | **Roo Code** | **Copilot** | **any AI coding tool**
 
 ---
 
 **The problem**
 
-https://github.com/user-attachments/assets/placeholder-ai-slop
+https://github.com/fahadcr14/design-you-need/blob/main/assets/ai_slop.mp4
 
-https://github.com/user-attachments/assets/placeholder-fix-ai-slop
+<sub>AI builds frontends that all look the same — gradient buttons, decorative blobs, lorem ipsum energy, template section ordering. We call this <b>slop</b>.</sub>
 
-> After you push to GitHub, drag-and-drop `assets/ai_slop.mp4` and `assets/fix_ai_slop.mp4` into the README editor to get permanent video URLs. Replace the placeholder links above with those URLs.
+---
 
-<sub><b>ai_slop.mp4</b> — AI builds frontends that all look the same. Gradient buttons, decorative blobs, template ordering. This is <b>slop</b>.</sub>
-<br>
-<sub><b>fix_ai_slop.mp4</b> — Same prompt. Same AI. But now it knows what 288 high-scoring designers actually do.</sub>
+**The fix**
+
+https://github.com/fahadcr14/design-you-need/blob/main/assets/fix_ai_slop.mp4
+
+<sub>Same prompt. Same AI. But now it knows what high-scoring designers actually do — and what slop projects get wrong.</sub>
 
 </div>
 
@@ -26,31 +30,72 @@ https://github.com/user-attachments/assets/placeholder-fix-ai-slop
 
 ## What is this?
 
-AI coding tools (Claude, Cursor, Copilot, etc.) are incredible at writing code — but terrible at design. Every frontend they generate looks the same: the same hero layout, the same gradient buttons, the same card grids, the same soul-less "modern" aesthetic.
+AI coding tools are incredible at writing code — but terrible at design. Every frontend they generate looks the same: the same hero layout, the same gradient buttons, the same card grids, the same soul-less "modern" aesthetic.
 
-**design-you-need** fixes this. It's a Claude Code skill that injects real design intelligence — extracted from studying 399 actual designer-crafted projects — directly into your AI coding workflow.
+**design-you-need** fixes this. It's a skill that injects real design intelligence — extracted from studying actual designer-crafted, award-winning projects — directly into your AI coding workflow.
 
 It knows:
-- Which of **10 aesthetic signatures** fits your project category
-- Which of **5 hero layout patterns** creates the right visual impact
-- The **15 slop red flags** that make frontends look AI-generated
-- The **10 craft principles** that separate a score-9 project from a score-4
+- Which **aesthetic signature** fits your project category
+- Which **hero layout pattern** creates the right visual impact
+- The **slop red flags** that make frontends look AI-generated
+- The **craft principles** that separate great design from generic output
 - **Typography pairings**, **color theory**, **animation patterns**, **component CSS** — all backed by data, not vibes
 
 ---
 
 ## Install
 
-```bash
-# Install via Claude Code CLI
-claude install-skill https://github.com/<your-username>/design-you-need
-```
-
-Or manually — copy the `design-you-need/` folder into your Claude Code skills directory:
+### Claude Code
 
 ```bash
-cp -r design-you-need/ ~/.claude/skills/design-you-need
+claude install-skill https://github.com/fahadcr14/design-you-need
 ```
+
+### Cursor
+
+Add to your project's `.cursor/rules/` directory:
+
+```bash
+# Clone and copy into your project
+git clone https://github.com/fahadcr14/design-you-need.git
+cp -r design-you-need/design-you-need/ .cursor/rules/design-you-need/
+```
+
+Or add the SKILL.md content as a **User Rule** in Cursor Settings → Rules.
+
+### Windsurf
+
+Add to your project's `.windsurfrules` or rules directory:
+
+```bash
+git clone https://github.com/fahadcr14/design-you-need.git
+cp -r design-you-need/design-you-need/ .windsurf/rules/design-you-need/
+```
+
+### Cline / Roo Code
+
+Add as a **custom instruction** or drop into your project's rules directory:
+
+```bash
+git clone https://github.com/fahadcr14/design-you-need.git
+# Cline
+cp -r design-you-need/design-you-need/ .cline/rules/design-you-need/
+# Roo Code
+cp -r design-you-need/design-you-need/ .roo/rules/design-you-need/
+```
+
+### GitHub Copilot
+
+Add as a **custom instruction file** in your project:
+
+```bash
+git clone https://github.com/fahadcr14/design-you-need.git
+cp -r design-you-need/design-you-need/ .github/copilot-instructions/design-you-need/
+```
+
+### Any other AI coding tool
+
+The skill is plain Markdown. Copy the `design-you-need/` folder into wherever your tool reads custom instructions, rules, or system prompts from.
 
 ---
 
@@ -79,11 +124,7 @@ E-commerce, SaaS, Agency, Landing Page, Fintech, AI Product, Real Estate, Travel
 
 ## The Research
 
-This skill isn't based on opinions. It's based on a structured analysis of **399 Dribbble projects**, each scored 1-10 on design quality.
-
-### What we found
-
-**288 projects scored 7+** (high craft). **87 were flagged as slop.** The gap between them is systematic and teachable.
+This skill isn't based on opinions. It's based on a structured analysis of award-winning Dribbble projects, each scored 1-10 on design quality. The gap between high-craft and slop is systematic and teachable.
 
 <table>
 <tr>
@@ -109,7 +150,7 @@ This skill isn't based on opinions. It's based on a structured analysis of **399
 - Typography contrast (120px headlines vs 12px labels)
 - Photography as the color palette source
 - One bold visual moment > ten generic sections
-- Custom components (312 out of 399 projects)
+- Custom components, not library defaults
 - Section rhythm: dark/light, wide/narrow alternation
 - Micro-interactions that reward (hover lift, arrow slide)
 - Intentional decorative elements (noise, glow, not blobs)
@@ -118,20 +159,20 @@ This skill isn't based on opinions. It's based on a structured analysis of **399
 </tr>
 </table>
 
-### Aesthetic signatures (from all 399 projects)
+### Aesthetic signatures
 
-| Aesthetic | Projects | Best for |
-|-----------|----------|----------|
-| **dark-luxury** | 98 | Premium brands, crypto, automotive |
-| **warm-minimal** | 94 | E-commerce, food, wellness |
-| **minimal-corporate** | 64 | SaaS, fintech, B2B |
-| **bold-expressive** | 31 | Agency, portfolio, creative |
-| **organic-natural** | 28 | Food, wellness, eco-brands |
-| **dimensional-layered** | 28 | Tech products, AI, innovative brands |
-| **editorial** | 26 | Fashion, luxury, cultural brands |
-| **glassmorphism** | 16 | Dashboards, crypto, AI tools |
-| **retro-modern** | 8 | Food, creative, nostalgic brands |
-| **neo-brutalist** | 2 | Experimental, artistic |
+| Aesthetic | Best for |
+|-----------|----------|
+| **dark-luxury** | Premium brands, crypto, automotive |
+| **warm-minimal** | E-commerce, food, wellness |
+| **minimal-corporate** | SaaS, fintech, B2B |
+| **bold-expressive** | Agency, portfolio, creative |
+| **organic-natural** | Food, wellness, eco-brands |
+| **dimensional-layered** | Tech products, AI, innovative brands |
+| **editorial** | Fashion, luxury, cultural brands |
+| **glassmorphism** | Dashboards, crypto, AI tools |
+| **retro-modern** | Food, creative, nostalgic brands |
+| **neo-brutalist** | Experimental, artistic |
 
 ---
 
@@ -141,42 +182,40 @@ This skill isn't based on opinions. It's based on a structured analysis of **399
 design-you-need/
   SKILL.md                              # Core skill (the brain)
   references/
-    anti-slop-rules.md                  # 20 slop + 30 craft examples with evidence
-    design-recipes.md                   # 40 highest-scoring recipes (score 9/10)
+    anti-slop-rules.md                  # Slop + craft examples with evidence
+    design-recipes.md                   # Highest-scoring recipes with full breakdowns
     category-playbooks.md               # Best aesthetics + recipes per category
     color-theory.md                     # Palettes, accent rules, contrast pairs
-    typography-rules.md                 # 50 font pairings + 60 special effects
-    animation-patterns.md               # 1,913 interactions categorized
+    typography-rules.md                 # Font pairings + special effects
+    animation-patterns.md               # Interactions categorized by type
     component-patterns.md               # Button, card, nav, footer CSS
     layout-visuals.md                   # Grid systems, hero patterns, decorative CSS
-    e-commerce.md                       # 67 project recipes
-    agency.md                           # 44 project recipes
-    landing-page.md                     # 37 project recipes
-    fintech.md                          # 26 project recipes
-    saas.md                             # 22 project recipes
-    ai-product.md                       # 20 project recipes
+    e-commerce.md                       # E-commerce project recipes
+    agency.md                           # Agency project recipes
+    landing-page.md                     # Landing page recipes
+    fintech.md                          # Fintech recipes
+    saas.md                             # SaaS recipes
+    ai-product.md                       # AI product recipes
     ... and 14 more category files
 ```
-
-**Total reference material**: ~1.5MB of structured design intelligence across 30 files.
 
 ---
 
 ## How it works
 
 1. **You say** "build me a landing page for my AI startup"
-2. **The skill picks** the right aesthetic (dimensional-layered), hero pattern (layered), color strategy (neutral + one accent), typography pairing, and animation approach
+2. **The skill picks** the right aesthetic, hero pattern, color strategy, typography pairing, and animation approach
 3. **It builds mobile-first**, with proper responsive breakpoints, touch targets, and stacking
-4. **It runs a verification checklist** — 30+ checks across mobile, UX, anti-slop, color, and performance
+4. **It runs a verification checklist** — checks across mobile, UX, anti-slop, color, and performance
 5. **You get** a frontend that looks like you hired a designer — not like you typed "make it modern" into an AI
 
 ### The anti-slop engine
 
-Every time the skill generates or reviews frontend code, it checks against the 15 slop red flags. If it detects generic gradient buttons, template section ordering, typography chaos, or any of the other patterns — it fixes them before you ever see slop output.
+Every time the skill generates or reviews frontend code, it checks against known slop red flags. If it detects generic gradient buttons, template section ordering, typography chaos, or any of the other patterns — it fixes them before you ever see slop output.
 
 ---
 
-## Examples
+## Before & After
 
 ### Before (vanilla AI output)
 - Generic hero with gradient blob background
@@ -188,23 +227,23 @@ Every time the skill generates or reviews frontend code, it checks against the 1
 - Layered hero with photography-extracted color palette
 - Asymmetric bento grid with shadow hierarchy and hover lift
 - Custom nav with personality and intentional labels
-- Consistent 8px spacing scale, 2 fonts, 1 accent color
+- Consistent spacing scale, 2 fonts, 1 accent color
 
 ---
 
 ## FAQ
 
-**Does this work with any AI coding tool?**
-It's a Claude Code skill, so it works with Claude Code (CLI, VS Code, JetBrains). The reference files could theoretically be adapted for other tools.
+**Does this work with my AI coding tool?**
+Yes. It works with Claude Code, Cursor, Windsurf, Cline, Roo Code, GitHub Copilot, and any tool that supports custom instructions or rules. It's just Markdown files.
 
 **Do I need design experience?**
 No. The skill handles design decisions for you. Just describe what you're building.
 
 **Can I customize the aesthetic?**
-Yes. Tell the skill your preferred color, aesthetic direction, or reference a specific style — it will adapt.
+Yes. Tell the skill your preferred color, aesthetic direction, or reference a specific style — it will adapt and build a proper palette around your choice.
 
 **What about existing projects?**
-Use `/design-you-need revamp` or `/design-you-need fix-slop` to upgrade existing frontends.
+Use `fix-slop` to detect and eliminate slop patterns, or `revamp` to upgrade the overall design quality.
 
 ---
 
@@ -229,6 +268,6 @@ MIT
 
 **Built by someone who got tired of AI making every website look the same.**
 
-*399 projects analyzed. 87 slop patterns identified. 288 craft lessons extracted.*
+*Award-winning designs analyzed. Slop patterns identified. Craft lessons extracted. Now it's a skill.*
 
 </div>
