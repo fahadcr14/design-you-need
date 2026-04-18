@@ -12,7 +12,9 @@ Works with **Claude Code** | **Cursor** | **Windsurf** | **Cline** | **Roo Code*
 
 **The problem**
 
-https://github.com/fahadcr14/design-you-need/blob/main/assets/ai_slop.mp4
+
+
+https://github.com/user-attachments/assets/859677cb-4f56-466a-824a-aeddf5de1219
 
 <sub>AI builds frontends that all look the same — gradient buttons, decorative blobs, lorem ipsum energy, template section ordering. We call this <b>slop</b>.</sub>
 
@@ -20,7 +22,8 @@ https://github.com/fahadcr14/design-you-need/blob/main/assets/ai_slop.mp4
 
 **The fix**
 
-https://github.com/fahadcr14/design-you-need/blob/main/assets/fix_ai_slop.mp4
+
+https://github.com/user-attachments/assets/fee170b9-f2d7-4d03-af75-dd5c293b0744
 
 <sub>Same prompt. Same AI. But now it knows what high-scoring designers actually do — and what slop projects get wrong.</sub>
 
