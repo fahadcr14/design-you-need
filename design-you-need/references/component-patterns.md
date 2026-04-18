@@ -1,0 +1,783 @@
+# Component Patterns
+
+Real component implementations from 399 analyzed projects.
+
+## Button Patterns
+
+### Shape Distribution
+- **pill** (border-radius:9999px): 573 instances — dominant CTA style
+- **rounded-8** (border-radius:8px): 365 — secondary/utility buttons
+- **square** (border-radius:0): 50 — editorial/brutalist aesthetics
+- **rounded-4**: 35 — subtle rounding
+
+### Fill Distribution
+- **outline**: 569 — ghost/secondary buttons dominate
+- **solid**: 390 — primary CTAs
+- **glass**: 51 — backdrop-filter blur, dark themes
+- **gradient**: 14 — rare, used sparingly
+
+### Button CSS from 9/10 Projects
+
+- **[9] primary / pill / solid**: `Red circle with white text, border-radius:50% for dot CTA`
+  - Hover: scale-up or color-invert
+- **[9] ghost / square / outline**: `Text-only link with arrow icon`
+  - Hover: underline or color shift
+- **[9] primary / text-link / none**: `text-decoration with arrow entity →`
+  - Hover: underline or arrow animation
+- **[9] ghost / text-link / none**: `font-weight:600 with inline arrow`
+  - Hover: opacity or underline
+- **[9] primary / rounded-8 / outline**: `border: 1.5px solid #493122; letter-spacing: 0.2em; text-transform: uppercase`
+  - Hover: fill-transition to solid brown
+- **[9] ghost / square / outline**: `text-decoration with transition on border-bottom`
+  - Hover: underline-slide
+- **[9] primary / pill / solid**: `border-radius:24px; background:#4A4AE8 (Chumakov) or #634940 (Hapr)`
+  - Hover: darken or scale
+- **[9] secondary / rounded-8 / outline**: `border:1px solid; background:transparent`
+  - Hover: fill-swap
+- **[9] primary / pill / solid**: `border-radius: 999px; background: #E2180B; color: white; padding: 12px 32px`
+  - Hover: darken or scale
+- **[9] secondary / pill / outline**: `border: 1.5px solid #1A1A3E; border-radius: 999px; background: transparent`
+  - Hover: fill transition
+- **[9] ghost / n/a / n/a**: `Scroll arrow is the only interactive hint — likely CSS animation bounce`
+  - Hover: n/a
+- **[9] secondary / rounded-8 / outline**: `border: 1px solid rgba(255,255,255,0.3)`
+  - Hover: likely fill transition
+- **[9] ghost / square / outline**: `border: 1px solid rgba(255,255,255,0.2)`
+  - Hover: likely subtle opacity or underline
+- **[9] primary / pill / solid**: `border-radius:9999px; background:#fff; color:#000`
+  - Hover: likely scale or bg-shift
+- **[9] secondary / pill / outline**: `border:1px solid rgba(255,255,255,0.3); backdrop-filter:blur`
+  - Hover: fill-transition
+- **[9] ghost / pill / glass**: `backdrop-filter:blur(12px); background:rgba(255,255,255,0.1)`
+  - Hover: opacity-shift
+- **[9] primary / pill / outline**: `border: 1px solid rgba(255,255,255,0.3); border-radius: 999px`
+  - Hover: fill-transition
+- **[9] secondary / rounded-8 / glass**: `backdrop-filter: blur(10px); background: rgba(255,255,255,0.08)`
+  - Hover: opacity-shift
+- **[9] ghost / pill / outline**: `border: 1px solid #3E3E42`
+  - Hover: border-highlight
+- **[9] ghost / square / outline**: `text-only with bracket notation as affordance`
+  - Hover: likely underline or color shift
+- **[9] primary / pill / outline**: `border: 1px solid rgba(255,255,255,0.4); border-radius: 999px`
+  - Hover: fill-invert
+- **[9] secondary / pill / solid**: `background: #1a1a1a; color: white; border-radius: 999px`
+  - Hover: scale-up
+- **[9] ghost / pill / outline**: `border: 1px solid rgba(255,255,255,0.3)`
+  - Hover: bg-fill-green
+- **[9] ghost / pill / outline**: `border: 1px solid rgba(255,255,255,0.3)`
+  - Hover: fill-in transition
+- **[9] primary / rounded-8 / solid**: `background: #0A0A0A (dark on light pages)`
+  - Hover: scale + glow
+- **[9] primary / pill / gradient**: `background: linear-gradient(hot-pink to coral) on e-commerce page`
+  - Hover: arrow slide
+- **[9] ghost / square / outline**: `text-only CTA 'APPLY NOW'`
+  - Hover: n/a
+- **[9] primary / rounded-8 / solid**: `background:#FF0900, color:white, font-weight:bold, text-transform:uppercase`
+  - Hover: darken or scale
+- **[9] secondary / rounded-8 / outline**: `border:2px solid #040302, background:white`
+  - Hover: fill transition
+- **[9] ghost / pill / outline**: `Arrow circle buttons on blog cards`
+  - Hover: bg-fill
+- **[9] primary / pill / outline**: `border: 1px solid rgba(255,255,255,0.4); border-radius: 20px`
+  - Hover: fill-invert
+- **[9] ghost / pill / glass**: `backdrop-filter: blur(8px); background: rgba(255,255,255,0.1)`
+  - Hover: opacity-shift
+- **[8] primary / pill / solid**: `border-radius:9999px; background:#9AF712; color:#050A06`
+  - Hover: brightness shift or scale
+- **[8] secondary / pill / outline**: `border:2px solid #9AF712; color:#F6F4EA`
+  - Hover: fill transition
+- **[8] primary / pill / solid**: `border-radius: 999px; background: #354B4A`
+  - Hover: darken or subtle scale
+- **[8] secondary / pill / outline**: `border: 1px solid #354B4A; border-radius: 999px`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `border: 1px solid #E5EFF0; border-radius: 999px`
+  - Hover: background-fill
+- **[8] primary / pill / solid**: `border-radius:24px; background:#A68759; text-transform:uppercase`
+  - Hover: Scale + glow likely
+- **[8] ghost / square / outline**: `border:2px solid rgba(255,255,255,0.3); backdrop-filter:blur`
+  - Hover: Fill transition
+- **[8] ghost / square / outline**: `border-bottom with transition-width`
+  - Hover: line-extend animation
+- **[8] secondary / pill / outline**: `border: 1px solid with background-color transition`
+  - Hover: fill transition
+- **[8] primary / rounded-8 / solid**: `background:#EEB630; color:#0A0413; border-radius:8px; font-weight:600`
+  - Hover: likely scale + shadow
+- **[8] secondary / rounded-8 / solid**: `background:#0A0413; color:#fff; border-radius:6px`
+  - Hover: opacity or invert
+- **[8] primary / pill / solid**: `border-radius:999px, background:#181D1D, color:#fff`
+  - Hover: likely scale or invert
+- **[8] secondary / rounded-8 / outline**: `border:1px solid #D2D2D2`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `Service category tags in hero`
+  - Hover: bg-fill
+- **[8] primary / rounded-4 / solid**: `background-color with letter-spacing on label`
+  - Hover: likely opacity or lighten
+- **[8] secondary / rounded-4 / outline**: `border: 1px solid with transparent bg`
+  - Hover: likely fill transition
+- **[8] primary / pill / solid**: `background:#fff; color:#080705; border-radius:999px`
+  - Hover: subtle-brighten
+- **[8] secondary / pill / outline**: `border:1px solid rgba(255,255,255,0.4); border-radius:999px; color:#fff`
+  - Hover: fill-transition
+- **[8] ghost / pill / outline**: `border:1px solid rgba(255,255,255,0.5); border-radius:999px`
+  - Hover: arrow-slide
+- **[8] primary / pill / solid**: `background:#091523; color:white; border-radius:20px; padding:10px 20px`
+  - Hover: darken or subtle shift
+- **[8] secondary / pill / outline**: `border:1.5px solid #4E5843; border-radius:20px; background:transparent`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `border:1.5px solid #F8F6EE; color:#F8F6EE; on dark bg`
+  - Hover: fill transition
+- **[8] primary / rounded-4 / outline**: `border: 1px solid #D94B1A; color: #D94B1A`
+  - Hover: likely fill with vermillion bg
+- **[8] secondary / square / outline**: `border: 1px solid currentColor`
+  - Hover: fill transition
+- **[8] ghost / square / outline**: `border-radius: 50%; border: 1px solid`
+  - Hover: arrow slide
+- **[8] primary / pill / solid**: `border-radius:9999px; background:#FF5A1F; color:#000`
+  - Hover: likely scale or color shift
+- **[8] secondary / pill / outline**: `border-radius:9999px; border:1px solid rgba(255,255,255,0.4); color:#fff`
+  - Hover: likely fill transition
+- **[8] ghost / pill / outline**: `border:1px solid rgba(255,255,255,0.3)`
+  - Hover: border-color change
+- **[8] primary / pill / solid**: `background-color with border-radius: 999px`
+  - Hover: darken
+- **[8] secondary / pill / outline**: `border: 1px solid with transparent bg`
+  - Hover: fill-transition
+- **[8] ghost / rounded-8 / outline**: `border: 1px solid #ddd`
+  - Hover: bg-fill
+- **[8] primary / pill / solid**: `border-radius: 999px; background: #42B676`
+  - Hover: darken
+- **[8] secondary / pill / outline**: `border: 1px solid rgba(255,255,255,0.3); border-radius: 999px`
+  - Hover: fill-swap
+- **[8] ghost / pill / outline**: `border: 1px solid #ddd; border-radius: 999px`
+  - Hover: bg-fill
+- **[8] primary / rounded-8 / solid**: `background-color with border-radius:8px`
+  - Hover: darken/shadow
+- **[8] secondary / rounded-8 / outline**: `border:1px solid with transparent bg`
+  - Hover: fill transition
+- **[8] primary / pill / solid**: `background-color + border-radius:24px + arrow icon`
+  - Hover: darken
+- **[8] secondary / pill / outline**: `border:1px solid + border-radius:24px`
+  - Hover: fill-transition
+- **[8] ghost / pill / outline**: `transparent bg, subtle border`
+  - Hover: bg-fill
+- **[8] primary / rounded-8 / solid**: `border-radius: 8px; background: #4558A3`
+  - Hover: subtle lift + shadow
+- **[8] ghost / rounded-8 / outline**: `border: 1px solid #3B4254`
+  - Hover: fill transition
+- **[8] primary / pill / solid**: `border-radius:9999px with inline icon arrow`
+  - Hover: likely scale + darken
+- **[8] secondary / pill / outline**: `border:1.5px solid + border-radius:9999px`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `text-decoration:underline on text link`
+  - Hover: underline
+- **[8] primary / pill / outline**: `border: 1px solid; border-radius: 999px`
+  - Hover: fill-invert
+- **[8] secondary / rounded-8 / solid**: `background-color with icon-left`
+  - Hover: opacity
+- **[8] ghost / pill / outline**: `border: 1px solid transparent`
+  - Hover: underline
+- **[8] primary / pill / solid**: `border-radius:9999px; background:#0A0C1A; color:white; padding:16px 48px`
+  - Hover: likely scale or darken
+- **[8] secondary / pill / outline**: `border:1.5px solid #0A0C1A; border-radius:9999px`
+  - Hover: fill transition
+- **[8] icon / rounded-full / solid**: `border-radius:50%; background:#0A0C1A; width:48px`
+  - Hover: rotate or scale
+- **[8] primary / rounded-8 / solid**: `background:#1A1A1A; color:#fff; border-radius:8px; padding:12px 24px`
+  - Hover: darken or subtle scale
+- **[8] secondary / rounded-8 / outline**: `border:1px solid #1A1A1A; background:transparent; border-radius:8px`
+  - Hover: fill transition
+- **[8] primary / pill / solid**: `border-radius:9999px; background:#fff; color:#0D0603`
+  - Hover: scale + glow
+- **[8] secondary / pill / outline**: `border:1px solid rgba(255,255,255,0.3); backdrop-filter:blur(8px)`
+  - Hover: fill transition
+- **[8] accent / pill / solid**: `background:#B54919; color:#fff`
+  - Hover: brightness
+- **[8] primary / rounded-8 / solid**: `background-color: #115713; border-radius: 8px`
+  - Hover: darken
+- **[8] secondary / rounded-8 / outline**: `border: 1px solid rgba(255,255,255,0.3); backdrop-filter: none`
+  - Hover: fill-transition
+- **[8] ghost / rounded-8 / outline**: `border: 1px solid #ccc; color: #030704`
+  - Hover: bg-fill
+- **[8] primary / pill / outline**: `border: 1px solid; border-radius: 999px`
+  - Hover: fill-transition
+- **[8] ghost / square / outline**: `text-decoration: underline on hover`
+  - Hover: underline
+- **[8] primary / pill / outline**: `border: 1px solid currentColor with inline icon`
+  - Hover: fill-transition
+- **[8] secondary / rounded-8 / solid**: `Blue circle arrow button — border-radius:50% on icon container`
+  - Hover: scale-up
+- **[8] primary / rounded-8 / solid**: `background-color with border-radius: 8px`
+  - Hover: darken
+- **[8] secondary / rounded-8 / outline**: `border: 1px solid with transparent bg`
+  - Hover: bg-fill
+- **[8] ghost / rounded-6 / glass**: `transparent bg, icon-only`
+  - Hover: bg-subtle
+- **[8] ai-action / pill / gradient**: `linear-gradient purple-to-blue, border-radius: 50%`
+  - Hover: glow
+- **[8] primary / pill / solid**: `border-radius: 999px; background-color: accent`
+  - Hover: darken or scale
+- **[8] secondary / rounded-8 / outline**: `border: 1px solid; transition: background`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `border: 1px solid white; color: white`
+  - Hover: bg-fill
+- **[8] primary / square / solid**: `Large square CTA block, unusual sizing creates visual weight`
+  - Hover: subtle opacity or scale
+- **[8] secondary / pill / outline**: `border-radius:50%, 1px border`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `Uppercase tracking with underline on 'HOW IT WORKS'`
+  - Hover: underline
+- **[8] primary / pill / solid**: `background:#3B4BDB; border-radius:24px; padding:12px 24px`
+  - Hover: darken/scale
+- **[8] secondary / pill / outline**: `border:1px solid #191518; border-radius:20px; background:white`
+  - Hover: fill transition
+- **[8] ghost / rounded-8 / outline**: `border:1px solid #ddd; border-radius:40px`
+  - Hover: border-darken
+- **[8] primary / rounded-8 / solid**: `background-color with border-radius: 8px`
+  - Hover: darken
+- **[8] secondary / rounded-8 / outline**: `border with transparent background`
+  - Hover: bg-fill
+- **[8] ghost / rounded-8 / outline**: `Show more button with icon, border: 1px solid`
+  - Hover: subtle-bg
+- **[8] primary / pill / solid**: `border-radius:999px, background:#0E1106, color:white`
+  - Hover: darken/scale
+- **[8] secondary / pill / outline**: `border:1.5px solid #0E1106, border-radius:999px, background:transparent`
+  - Hover: fill-transition
+- **[8] primary / rounded-8 / solid**: `background-color transition + transform on arrow icon`
+  - Hover: darken + arrow shift
+- **[8] secondary / rounded-8 / outline**: `border 1px + background-color transition`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `border-radius: 999px, nav pill style`
+  - Hover: subtle fill
+- **[8] primary / pill / glass**: `backdrop-filter: blur() + border: 1px solid rgba(255,255,255,0.3)`
+  - Hover: bg-opacity increase
+- **[8] ghost / pill / outline**: `border: 1px solid rgba(255,255,255,0.4)`
+  - Hover: fill transition
+- **[8] icon / pill / outline**: `border-radius: 50%`
+  - Hover: opacity
+- **[8] primary / pill / solid**: `background:#7C933C, border-radius:24px, icon-left layout`
+  - Hover: brightness lift + subtle scale
+- **[8] secondary / pill / outline**: `border:1px solid rgba(255,255,255,0.2), border-radius:24px`
+  - Hover: fill transition
+- **[8] ghost / pill / glass**: `backdrop-filter:blur(8px), bg rgba(255,255,255,0.08)`
+  - Hover: bg-opacity increase
+- **[8] primary / square / solid**: `background:#333; color:#fff; padding:12px 24px; text-transform:uppercase; letter-spacing:1.5px; font-size:11px`
+  - Hover: likely opacity or invert
+- **[8] primary / rounded-8 / outline**: `border: 1px solid rgba(255,255,255,0.3); background: transparent`
+  - Hover: fill-transition
+- **[8] secondary / rounded-8 / outline**: `border: 1px solid #333`
+  - Hover: bg-fill
+- **[8] ghost / rounded-8 / outline**: `border: 1px solid #ccc on light bg`
+  - Hover: border-darken
+- **[8] primary / pill / outline**: `border-radius:50%, border:1px solid`
+  - Hover: likely fill transition
+- **[8] ghost / rounded-8 / outline**: `inline-flex with arrow icon`
+  - Hover: arrow animation
+- **[8] primary / pill / solid**: `border-radius:24px, white bg, dark text`
+  - Hover: bg-darken or scale
+- **[8] secondary / pill / solid**: `Separate arrow circle — 44px round, white bg, dark arrow icon`
+  - Hover: bg-darken
+- **[8] ghost / pill / outline**: `Explore Stays — white border, white text, paired with arrow circle`
+  - Hover: fill-white
+- **[8] ghost / square / outline**: `text-decoration on hover`
+  - Hover: underline or opacity
+- **[8] primary / pill / solid**: `border-radius:9999px; background:#F41236`
+  - Hover: scale + color-shift
+- **[8] secondary / pill / outline**: `border:1px solid #262525; border-radius:9999px`
+  - Hover: fill-transition
+- **[8] ghost / pill / glass**: `backdrop-filter:blur(10px); background:rgba(255,255,255,0.1)`
+  - Hover: bg-opacity-change
+- **[8] primary / rounded-8 / solid**: `background-color with border-radius: 6-8px`
+  - Hover: likely color-shift or scale
+- **[8] ghost / square / outline**: `border with transparent bg`
+  - Hover: bg-fill
+- **[8] primary / pill / solid**: `background-color with border-radius:22px`
+  - Hover: brightness increase
+- **[8] secondary / pill / outline**: `border:1px solid with transparent bg`
+  - Hover: fill transition
+- **[8] ghost / rounded-8 / glass**: `backdrop-filter:blur with rgba background`
+  - Hover: bg-opacity change
+- **[8] primary / pill / outline**: `border: 1px solid #8670EE; border-radius: 24px`
+  - Hover: fill-transition
+- **[8] secondary / rounded-8 / glass**: `backdrop-filter: blur(12px); background: rgba(134,112,238,0.15)`
+  - Hover: opacity-shift
+- **[8] ghost / pill / outline**: `border: 1px solid rgba(255,255,255,0.2)`
+  - Hover: bg-fill
+- **[8] cta-circle / circle-64 / solid-white**: `border-radius: 50%; background: #fff; box-shadow: 0 8px 32px rgba(134,112,238,0.3)`
+  - Hover: scale-up
+- **[8] ghost / square / outline**: `border: 1px solid`
+  - Hover: likely fill-swap
+- **[8] primary / pill / solid**: `border-radius: 22px; background: #0723A4`
+  - Hover: n/a
+- **[8] secondary / pill / glass**: `backdrop-filter: blur; background: rgba(255,255,255,0.6)`
+  - Hover: n/a
+- **[8] primary / rounded-8 / solid**: `background-color:#D50903; border-radius:8px`
+  - Hover: darken
+- **[8] secondary / pill / outline**: `border:1px solid #EEEEEE; border-radius:20px`
+  - Hover: fill-transition
+- **[8] ghost / square / outline**: `text-decoration on hover`
+  - Hover: underline
+- **[8] primary / pill / solid**: `background:#0E20ED; border-radius:24px; color:white; padding:12px 28px`
+  - Hover: darken
+- **[8] secondary / pill / outline**: `border:1px solid #ABB4DF; border-radius:24px; gap:8px with play icon`
+  - Hover: fill-transition
+- **[8] tab-active / rounded-8 / solid**: `background:#0E20ED; color:white; border-radius:8px`
+  - Hover: n/a
+- **[8] tab-inactive / rounded-8 / outline**: `border:1px solid #E0E0E0; color:#666; border-radius:8px`
+  - Hover: highlight
+- **[8] primary / rounded-8 / solid**: `background: white; color: black; border-radius: 6px`
+  - Hover: subtle-lift
+- **[8] ghost / rounded-8 / outline**: `border: 1px solid rgba(255,255,255,0.3)`
+  - Hover: bg-fill
+- **[8] primary / rounded-8 / outline**: `border: 1px solid rgba(255,255,255,0.5)`
+  - Hover: fill-white transition
+- **[8] ghost / square / outline**: `transparent background`
+  - Hover: opacity
+- **[8] primary / pill / solid**: `border-radius:9999px; background:#2253EE`
+  - Hover: darken or scale
+- **[8] secondary / pill / outline**: `border:1px solid #291110; border-radius:9999px`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `border:1px solid #e0e0e0; border-radius:9999px`
+  - Hover: bg-fill
+- **[8] primary / rounded-8 / outline**: `border: 1px solid white; background: transparent`
+  - Hover: fill-invert
+- **[8] secondary / rounded-8 / outline**: `border: 1px solid #46535A`
+  - Hover: underline or fill
+- **[8] ghost / square / outline**: `text-transform: uppercase; font-size: 11px; letter-spacing: 0.1em`
+  - Hover: background-fill
+- **[8] primary / pill / solid**: `border-radius: 24px; background: #E85C2B (orange-red)`
+  - Hover: likely scale or glow
+- **[8] primary / pill / solid**: `border-radius:9999px; background:#11100A; color:white`
+  - Hover: likely opacity or scale
+- **[8] ghost / pill / outline**: `border:1px solid #11100A; border-radius:9999px`
+  - Hover: fill transition
+- **[8] secondary / pill / outline**: `border:1px solid currentColor; border-radius:9999px; font-size:12px`
+  - Hover: background-fill
+- **[8] primary / pill / solid**: `background:#AFF725; color:#040D27; border-radius:999px`
+  - Hover: brightness shift
+- **[8] secondary / pill / outline**: `border:1px solid #FAFAFA; border-radius:999px; color:#FAFAFA`
+  - Hover: fill transition
+- **[8] primary / pill / solid**: `background: #0E0D0F; border-radius: 24px; with arrow icon`
+  - Hover: darken + scale
+- **[8] secondary / pill / outline**: `border: 1px solid #0E0D0F; border-radius: 24px; with play icon`
+  - Hover: fill transition
+- **[8] nav-cta / pill / solid**: `background: #0E0D0F; border-radius: 20px; circle arrow icon appended`
+  - Hover: scale
+- **[8] primary / pill / solid**: `border-radius:50% for circular play buttons`
+  - Hover: scale-up
+- **[8] secondary / rounded-8 / outline**: `border:1px solid with text color change`
+  - Hover: color-shift
+- **[8] ghost / pill / glass**: `background:transparent`
+  - Hover: opacity
+- **[8] primary / pill / solid**: `border-radius: 999px; background: #2D2D2D; color: white`
+  - Hover: darken
+- **[8] secondary / pill / outline**: `border: 1px solid #D0D0D0; border-radius: 999px`
+  - Hover: fill-transition
+- **[8] ghost / rounded-8 / outline**: `border: 1px solid #E0E0E0; border-radius: 8px`
+  - Hover: subtle-bg
+- **[8] primary / rounded-8 / solid**: `background-color with arrow icon`
+  - Hover: likely darken
+- **[8] secondary / pill / outline**: `CSS animation: rotate on circular text path using SVG or transform`
+  - Hover: rotation animation
+- **[8] ghost / square / outline**: `border + arrow icon`
+  - Hover: fill transition
+- **[8] primary / pill / solid**: `background:#ED2A12; border-radius:24px; color:white`
+  - Hover: darken or scale
+- **[8] secondary / pill / outline**: `border:1px solid currentColor; border-radius:24px`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `border:1px solid #ddd; border-radius:20px`
+  - Hover: bg-fill
+- **[8] ghost / n/a / text-only**: `text-transform:uppercase; letter-spacing:0.2em`
+  - Hover: likely underline or opacity
+- **[8] primary / pill / outline**: `border:1px solid rgba(255,255,255,0.3); border-radius:999px`
+  - Hover: fill-transition
+- **[8] secondary / pill / solid**: `background:#F0F3F2; color:#090905; border-radius:999px`
+  - Hover: opacity-shift
+- **[8] ghost / rounded-8 / outline**: `border:1px solid rgba(255,255,255,0.2)`
+  - Hover: bg-fill
+- **[8] primary / pill / solid**: `background: linear-gradient to right, border-radius: 24px, with arrow icon circle appended`
+  - Hover: likely glow intensify
+- **[8] ghost / pill / outline**: `border: 1px solid rgba(255,255,255,0.15), backdrop-filter: blur`
+  - Hover: fill transition
+- **[8] primary / pill / solid**: `background:#C09757; border-radius:999px; padding:14px 28px; text-transform:uppercase; letter-spacing:0.1em; font-size:12px`
+  - Hover: darken or slight scale
+- **[8] secondary / pill / outline**: `border:1px solid #13100B; border-radius:999px; background:transparent`
+  - Hover: fill transition
+- **[8] ghost / square / outline**: `text-decoration:underline; text-underline-offset:4px`
+  - Hover: underline
+- **[8] primary / rounded-8 / solid**: `background-color with border-radius: 6px`
+  - Hover: darken
+- **[8] secondary / rounded-8 / outline**: `border: 2px solid with transparent bg`
+  - Hover: fill-swap
+- **[8] ghost / pill / outline**: `border-radius: 999px, thin border`
+  - Hover: underline
+- **[8] primary / rounded-8 / outline**: `border: 1px solid #fff; background: transparent`
+  - Hover: fill-transition
+- **[8] ghost / rounded-8 / outline**: `color: #7B7B8E; border: none`
+  - Hover: underline or opacity
+- **[8] accent / pill / solid**: `background: #6C3AED; border-radius: 20px`
+  - Hover: brightness
+- **[8] primary / pill / solid**: `border-radius:9999px; background:#503322`
+  - Hover: darken or subtle scale
+- **[8] ghost / pill / outline**: `border:1px solid; border-radius:9999px`
+  - Hover: fill transition
+- **[8] primary / pill / solid**: `background:#8BD80E; border-radius:9999px; with arrow icon inline`
+  - Hover: likely brightness shift
+- **[8] secondary / pill / outline**: `border:1px solid #080C03; border-radius:9999px`
+  - Hover: likely fill transition
+- **[8] ghost / pill / outline**: `border:1px solid rgba(0,0,0,0.2); border-radius:9999px`
+  - Hover: subtle bg fill
+- **[8] primary / rounded-8 / solid**: `background-color with border-radius: 6-8px`
+  - Hover: darken
+- **[8] secondary / rounded-8 / outline**: `border: 1px solid + transparent background`
+  - Hover: fill-transition
+- **[8] badge / pill / solid**: `border-radius: 999px + small padding + green background`
+  - Hover: n/a
+- **[8] primary / pill / outline**: `border: 1px solid white; border-radius: 999px`
+  - Hover: fill-invert
+- **[8] secondary / pill / outline**: `border: 1px solid #080A06; border-radius: 999px`
+  - Hover: fill-invert
+- **[8] ghost / square / outline**: `Arrow icon links with border`
+  - Hover: bg-fill
+- **[8] primary / pill / outline**: `border-radius:50% with arrow icon inside circle`
+  - Hover: likely fill-red
+- **[8] primary / square / solid**: `text-transform:uppercase; letter-spacing:0.1em; font-family:monospace`
+  - Hover: likely invert or underline
+- **[8] ghost / square / outline**: `border:1px solid rgba(255,255,255,0.2)`
+  - Hover: text highlight
+- **[8] primary / pill / solid**: `background-color + border-radius:9999px + padding-inline`
+  - Hover: darken
+- **[8] secondary / pill / outline**: `border:1px solid + transparent bg`
+  - Hover: fill-transition
+- **[8] ghost / pill / outline**: `border:1px solid currentColor`
+  - Hover: underline
+- **[8] primary / pill / solid**: `background:#171310; border-radius:24px; color:white`
+  - Hover: darken/scale
+- **[8] secondary / pill / outline**: `border:1px solid #A19E9B; border-radius:24px; background:transparent`
+  - Hover: fill-transition
+- **[8] icon / pill / solid**: `width:44px; border-radius:50%; background:#171310`
+  - Hover: scale
+- **[8] primary / pill / gradient**: `background: linear-gradient(coral-to-pink), border-radius:24px`
+  - Hover: brightness lift + subtle scale
+- **[8] secondary / pill / outline**: `border:1px solid #ccc, border-radius:24px`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `text link with arrow →`
+  - Hover: underline or fill
+- **[8] primary / pill / outline**: `border-radius:50px; border:1.5px solid #CCCCD2`
+  - Hover: fill-invert
+- **[8] secondary / rounded-8 / glass**: `backdrop-filter:blur(10px); background:rgba(255,255,255,0.08)`
+  - Hover: opacity-shift
+- **[8] play / pill / solid**: `background:#7B6BA8; border-radius:50%`
+  - Hover: scale-up
+- **[8] primary / pill / outline**: `border-radius: 50%, arrow icon inside circle`
+  - Hover: fill-in transition
+- **[8] ghost / rounded-8 / outline**: `text-decoration: underline on 'Lets chat'`
+  - Hover: underline
+- **[8] primary / rounded-8 / solid**: `background-color with border-radius:8px`
+  - Hover: likely color shift or scale
+- **[8] ghost / pill / outline**: `border with transparent bg`
+  - Hover: fill transition
+- **[8] primary / square / solid**: `border:1px solid #fff, background:#111, text-transform:uppercase, letter-spacing:2px, font-size:11px`
+  - Hover: invert colors
+- **[8] secondary / square / outline**: `border:1px solid #111, background:transparent, text-transform:uppercase`
+  - Hover: fill black
+- **[8] ghost / square / outline**: `border:1px solid #ccc, padding:8px 16px, font-size:11px`
+  - Hover: underline
+- **[8] primary / pill / solid**: `background: #D5340C; border-radius: 24px`
+  - Hover: brightness-lift
+- **[8] ghost / pill / outline**: `border: 1px solid rgba(255,255,255,0.2); border-radius: 18px`
+  - Hover: fill-transition
+- **[8] secondary / rounded-8 / outline**: `border: 1px solid rgba(255,255,255,0.5)`
+  - Hover: likely fill transition
+- **[8] primary / pill / outline**: `border: 1.5px solid #C74810; border-radius: 999px`
+  - Hover: fill-transition to solid orange
+- **[8] secondary / pill / outline**: `border: 1.5px solid #5C5A5A; border-radius: 999px`
+  - Hover: border-color change
+- **[8] ghost / rounded-8 / outline**: `border: 1.5px solid #C74810; border-radius: 50%; aspect-ratio: 1`
+  - Hover: rotate arrow animation
+- **[8] primary / square / outline**: `border: 1px solid white; background: transparent`
+  - Hover: fill-invert
+- **[8] secondary / square / outline**: `border: 1px solid #505A66`
+  - Hover: fill-dark
+- **[8] ghost / square / solid**: `background: #2D3C54; color: white`
+  - Hover: opacity
+- **[8] primary / pill / solid**: `border-radius:24px; background:#E84B8A`
+  - Hover: scale + brightness
+- **[8] secondary / pill / outline**: `border:1px solid rgba(255,255,255,0.3); backdrop-filter:blur(8px)`
+  - Hover: fill transition
+- **[8] ghost / pill / glass**: `backdrop-filter:blur(10px); background:rgba(255,255,255,0.15)`
+  - Hover: bg-opacity change
+- **[8] primary / pill / solid**: `border-radius:50px; background:#161411; color:white; padding:12px 24px`
+  - Hover: likely scale or darken
+- **[8] ghost / pill / outline**: `Small Buy buttons on workspace cards with icon + arrow`
+  - Hover: fill transition
+- **[8] link / n/a / n/a**: `text-decoration:underline + arrow icon`
+  - Hover: underline
+- **[8] primary / rounded-8 / solid**: `background-color with border-radius:6px`
+  - Hover: darken
+- **[8] secondary / pill / outline**: `border:1px solid with border-radius:20px`
+  - Hover: fill-transition
+- **[8] primary / rounded-8 / outline**: `border: 1px solid rgba(255,255,255,0.3)`
+  - Hover: fill-invert
+- **[8] secondary / rounded-8 / solid**: `background: rgba(255,255,255,0.1); backdrop-filter: blur`
+  - Hover: opacity-shift
+- **[8] cta-nav / pill / solid-white**: `background: #fff; color: #000`
+  - Hover: scale-up
+- **[8] icon-arrow / pill / outline**: `border-radius: 50%; border: 1px solid rgba(255,255,255,0.2)`
+  - Hover: translate-x
+- **[8] primary / pill / glass**: `backdrop-filter:blur + border-radius:24px, icon circle inset`
+  - Hover: Arrow icon rotate or bg darken
+- **[8] secondary / pill / outline**: `border:1px solid dark, transparent bg`
+  - Hover: Fill transition
+- **[8] primary / pill / solid**: `background-color with border-radius: 999px`
+  - Hover: darken + slight scale
+- **[8] secondary / pill / outline**: `border: 1px solid with transparent bg`
+  - Hover: fill transition
+- **[8] ghost / pill / outline**: `inline-flex with icon arrow`
+  - Hover: arrow slide
+- **[8] primary / pill / solid**: `background-color:#8AA158; border-radius:999px; padding:12px 28px`
+  - Hover: darken or scale
+- **[8] secondary / pill / outline**: `border:1px solid currentColor; border-radius:999px; background:transparent`
+  - Hover: fill transition
+- **[8] primary / pill / solid**: `border-radius:9999px; background:accent-color`
+  - Hover: brightness increase
+- **[8] secondary / pill / outline**: `border:1px solid rgba(255,255,255,0.3); backdrop-filter:blur`
+  - Hover: fill transition
+- **[8] primary-portals / rounded-8 / solid**: `background:#8B2FC9; border-radius:8px`
+  - Hover: glow-expand
+- **[8] cta-circle / pill / gradient**: `background:linear-gradient(pink,orange); border-radius:50%`
+  - Hover: rotate arrow
+- **[8] primary / rounded-8 / solid**: `background:#080E1D; color:white; border-radius:4-6px`
+  - Hover: darken
+- **[8] secondary / rounded-8 / outline**: `border:1px solid #080E1D; background:transparent`
+  - Hover: fill-transition
+- **[8] ghost / rounded-8 / outline**: `border:1px solid #39465B; used for ADD TO CART on product cards`
+  - Hover: subtle-fill
+- **[8] primary / rounded-8 / solid**: `background-color:#395524; color:white; border-radius:6px`
+  - Hover: darken
+- **[8] secondary / pill / outline**: `border:1px solid #395524; border-radius:20px; background:transparent`
+  - Hover: fill-transition
+- **[8] primary / pill / solid**: `background:#EA1306; border-radius:24px; padding:12px 24px`
+  - Hover: darken or scale
+- **[8] secondary / rounded-8 / solid**: `background:#1a1a1a; border-radius:50%; width:44px; display:flex; align-items:center`
+  - Hover: opacity shift
+- **[8] ghost / pill / outline**: `border:1px solid rgba(255,255,255,0.3); backdrop-filter:blur(8px)`
+  - Hover: fill transition
+- **[8] primary / rounded-4 / solid**: `background-color with transition`
+  - Hover: darken
+- **[8] ghost / rounded-4 / outline**: `border 1px solid with hover background`
+  - Hover: fill-transition
+- **[8] primary / rounded-8 / solid**: `background-color: #904B49; color: white`
+  - Hover: darken
+- **[8] secondary / rounded-8 / outline**: `border: 1px solid currentColor`
+  - Hover: fill-transition
+- **[8] ghost / pill / outline**: `border: 1px solid #333; border-radius: 999px`
+  - Hover: bg-fill
+- **[8] primary / pill / outline**: `border-radius:9999px; border:1px solid`
+  - Hover: fill-transition
+- **[8] secondary / pill / solid**: `background:#435A38; color:white; border-radius:9999px`
+  - Hover: scale-up
+- **[8] ghost / pill / outline**: `border:1px solid rgba(0,0,0,0.15)`
+  - Hover: bg-fill
+- **[8] primary / pill / solid**: `border-radius:50%, white bg with dark text`
+  - Hover: scale + invert
+- **[8] secondary / pill / solid**: `Small earth-tone pills on image cards`
+  - Hover: opacity shift
+- **[8] ghost / square / outline**: `Text links with letter-spacing`
+  - Hover: underline
+- **[8] primary / pill / outline**: `border-radius:50px; border:1.5px solid`
+  - Hover: fill-transition
+- **[8] secondary / rounded-8 / solid**: `background-color with icon`
+  - Hover: opacity
+
+## Card Patterns
+
+### Card CSS from High-Scoring Projects
+
+- **[9] Diligence Infrastructure for Private Capital**: Large rounded-16px cards, glassmorphic overlay on photo state, clean white on wireframe state, ~32px padding, inner nested card with rounded-12px for text content
+- **[9] Interval. Cafe Brand Identity. Typography Layouts & Visuals.**: Modular color-blocked tiles — 0px radius, ~20-32px internal padding, no hover effect (static specimen), flush grid layout
+- **[9] PAWS & CO. — Luxury Pet Hotel Website**: Testimonial card — navy bg (#1A1A3E), ~16px radius, ~24px padding, circular avatar top, centered text, no hover visible
+- **[9] Mertana - Ski Brand**: Dark surface cards with 4px radius, 1px border rgba(255,255,255,0.08), ~24px padding, category images with grayscale treatment, hover likely reveals color or scale
+- **[9] Fourmeta website: Future-ready digital experience**: Bento-grid cards — mixed sizes, ~12-16px radius, dark bg with image fills, hover likely reveals overlay or scale, asymmetric 2x2 and 1x2 layouts
+- **[9] Product for a Productivity Product ✦ Daylier**: Dark surface (#1A1A1E), 16px radius, 20px padding, subtle 1px border rgba(255,255,255,0.06), no hover visible — some cards contain embedded photography with warm color grading
+- **[9] Origin creative landing page**: Portfolio cards — mixed sizes in bento grid, 12-16px radius, no visible padding, image-dominant with overlay text, hover likely scale/reveal
+- **[9] XIX3D Website — Cinematic 3D Animation**: Swap interface card on crypto page — white bg, 24px radius, 32px padding, subtle box-shadow, clean form layout
+- **[9] Golf Club Landing Page Design**: Course detail card — white/cream bg, no border-radius, ~16-24px padding, contains course name, aerial thumbnail, par/yardage stats, clean minimal layout
+- **[9] Case Study: Landing Page for Creator Growth Platform**: Rounded-16px corners, white/cream bg, no visible shadow, generous 24-32px padding, image + tag + title + arrow pattern for blog cards
+- **[9] Fourmeta services, but make them feel alive**: 3D-transformed service cards — ~280x420px, border-radius: 12px, perspective rotation via CSS transform: rotateY() rotateX(), each with unique imagery/color, hover triggers depth shift
+- **[8] Baumkontrolle im Netz - Web Design**: Dark green (#699554) cards with ~16px radius, ~24px padding, cream text, tree icon decorations — mobile content sections
+- **[8] Epitope — Biotech Visual Identity**: White fill, ~16px radius, ~32-40px padding, subtle 1px border #E5EFF0, no hover shadow visible, vertical stack: badge → heading → body → CTA
+- **[8] Fine Dine Club Website | Selected Screens**: n/a — content uses full-width panels and inline sections instead
+- **[8] MVRDP — Architectural Visualization Concept**: Case study cards — no visible border-radius, image top with text below, ~16px padding, clean divider lines between items
+- **[8] Clearing. – Visual Identity**: Dark bg, ~20px border-radius, ~32px padding, full-bleed image top half, text bottom, subtle 1px border or shadow edge
+- **[8] Herbal therapist website**: Oval-cropped botanical illustrations on cream bg, ~140x180px, no shadow, centered text label below — arranged in 5-col row on navy panel
+- **[8] Luméa Design Studio**: Image cards in catalogue — no border-radius, ~0px radius, tight 16px gap, heart icon on hover for favorites, no shadow
+- **[8] Architecture Studio Website — Modern Web Design Concept**: Dark semi-transparent card ~280x200px, border-radius ~16px, padding ~20px, contains project title, stats (area, year), orange CTA button — likely backdrop-filter:blur or rgba(0,0,0,0.7)
+- **[8] Formula - the tech behind peace of mind**: Product cards in 6-column grid, no visible borders, ~24px padding, center-aligned text, implicit column dividers via spacing
+- **[8] WSI Website Design**: Rounded-16px corners, dark navy bg on brand panels, light bg on product pages, ~24px padding, subtle shadow on light theme, image-top with icon overlay + label below
+- **[8] FundOnion — Web Design. Main Pages & Digital Experience Design**: Team member cards — light grey bg (#f5f5f5), ~12px radius, ~24px padding, headshot top, name/title below, LinkedIn icon, no hover visible
+- **[8] [Case Study] B2B Website Design for Clearbit**: White fill, 1px #B6C0F2 border, border-radius:12-16px, 24-32px padding, subtle box-shadow, bento-grid layout with varying spans
+- **[8] Finance SaaS Landing Page | Finance App**: Bento-grid cards with 12-16px radius, ~20-24px padding, green/sage/white fills, some with rounded photo crops, no visible hover in static
+- **[8] UNUS Landing page 3D web design and icons**: Light surface cards with 12-16px radius, subtle 1px border (#E8EBF0), 24px padding, soft box-shadow on hover
+- **[8] Zyron – Athletic Gear Website**: Feature cards: 16px radius, ~24px padding, solid color fills (blue #161AA6, orange #F47030), product images overlapping edges. Product sidebar cards: minimal with image + title + price, thin divider line
+- **[8] Fourmeta: Conversion-driven website design**: Service cards — full-width horizontal scroll, ~400px wide, muted pastel backgrounds (sage #C8D5C0, blush #F0D0C0), 12px radius, 32px padding, numbered (03, 04), title + description + arrow icon, image below
+- **[8] Mindbloom — Self-Development App & Learning Platform**: White rounded cards ~16-20px radius, ~24px padding, subtle shadow, used for value-prop and category sections
+- **[8] Wearable Tech Landing Page**: Feature cards: white bg, 16px radius, 24px padding, icon in dark rounded square top-left, no shadow, clean border or bg differentiation. Product cards: light gray bg (#F0F0F0), 16px radius, product image centered, no text visible yet
+- **[8] AI Travel Landing Page | Smart Trip Planning Website**: Dark glass cards with ~16px radius, ~24px padding, subtle border rgba(255,255,255,0.1), phone mockup imagery, no hover visible
+- **[8] Arbitra - AI Investment - Homepage**: White bg, 12-16px radius, 24-32px padding, subtle box-shadow, product UI screenshots embedded — used for features and data layer sections
+- **[8] Eivic - Skincare e-commerce**: Product cards: no visible border, ~12px radius, white/cream bg, product image centered, price badge with circular arrow indicator, ~16px padding, hover likely scale
+- **[8] Schwartz ™ - Real Estate Landing Page**: White bg, ~16px radius, ~24px padding, subtle shadow, numbered top-left with icon top-right, hover likely lift/shadow-increase
+- **[8] Sales CRM Email Composer AI Powered Writing UX | Closr**: White surface, border-radius: 12px, 16-20px padding, subtle box-shadow, no hover effect — static info cards
+- **[8] March - UI UX Design and Product Design Monthly Recap Motion**: Bento-style with 16-24px radius, 24-32px padding, varied aspect ratios, subtle shadow on hover, glassmorphism borders on blue stats section
+- **[8] Website for a Healthcare App ✦ Elara**: Right sidebar cards — ~16px radius, subtle backdrop-filter or semi-transparent fill, ~24px padding, glassmorphic on feature card with 3D abstract shape
+- **[8] Genesis Kit - Travel Landing Page**: Destination carousel cards — 16px radius, no padding, overflow:hidden, side cards have blur+scale transform for depth, box-shadow on active
+- **[8] FAQs — Untitled UI**: Testimonial card — dark bg #1D2939, rounded-16, split layout with text left + image right, no visible shadow, internal padding ~48px
+- **[8] Landscape Design Landing Page — GreenScape**: White bg, 12-16px radius, 24-32px padding, subtle box-shadow, service cards use horizontal layout with image right
+- **[8] Basketball Club Website – PlayHoops**: Pricing cards — white bg, ~16px radius, ~24px padding, orange left-border on active/featured card, hover likely subtle lift, vertical stack layout with price, features list, CTA
+- **[8] Virella - Greentech Analytics Landing Page Design**: Dark surface #0D0D12, border 1px rgba(255,255,255,0.06), border-radius 16px, padding 32px, subtle hover glow, feature cards have bottom illustration zones
+- **[8] Jewelry E-Commerce Website Tashola**: Product cards: no border, no radius, light gray bg #EDEDEA, ~16px padding, no hover shadow visible, image top + title + price below
+- **[8] Arbitra - AI Investment - Integration**: Light bg cards in tools grid — ~8px radius, ~24px padding, icon+category-tag+title+description layout, subtle border, 3-column grid
+- **[8] Fashion Brand Landing Page Design**: Bento-style cards with ~8px radius, ~16px padding, warm gray borders, overlapping layout with negative margins, no hover visible
+- **[8] Markus Bernhardt® — Editorial Website**: Image cards in grid — no border-radius, no padding, tight ~8-12px gap, likely hover-scale or opacity effect
+- **[8] UI-UX for Tech**: Rounded-16px, glassmorphic on dark themes (backdrop-filter:blur), white on light themes, 20-24px padding, subtle shadow, hover: slight lift + shadow-increase
+- **[8] We're selected as Top Web Design Agency**: Dark surface cards on mobile portfolio — ~16px radius, ~20px padding, subtle border or elevation, stacked vertical layout
+- **[8] UI-UX for Finance**: Dark surface #1a1f2e, border-radius:16px, 24px padding, subtle 1px border rgba(255,255,255,0.06), no hover lift visible, inner content uses 12-16px gaps
+- **[8] UI-UX for Blockchain & Cryptocurrency**: Glassmorphic dark cards, border-radius: 16-20px, 24px padding, subtle 1px border rgba(255,255,255,0.08), backdrop-filter: blur(20px), layered overlap composition
+- **[8] Creative Agency Landing Page**: Portfolio cards — no radius, flush edge-to-edge, image-only with hover reveal, ~4-col grid
+
+## Navigation Patterns
+
+### Nav from 9/10 Projects
+
+- **[9] Maria Eli: Fused Identities — Artist Portfolio**: Minimal right-aligned vertical text list (About, Work, Photos, Services) — likely fixed or scroll-triggered
+- **[9] Diligence Infrastructure for Private Capital**: Horizontal bar, logo left, 6 text links center, CTA link with arrow right, likely fixed on scroll
+- **[9] AMARI: Luxury Riverside Residences**: Hidden or minimal — no visible navigation in screenshots, likely appears on scroll or is a single-page teaser
+- **[9] Editorial Skincare Web Explorations with Golden Canyon Grid**: Horizontal top bar, logo left, 4 nav items center with em-dash separators, login/register right, likely fixed on scroll
+- **[9] Interval. Cafe Brand Identity. Typography Layouts & Visuals.**: Horizontal bar — logo left, text links center-right, CTA button far right, likely fixed on scroll
+- **[9] PAWS & CO. — Luxury Pet Hotel Website**: Horizontal bar — logo left, 3 text links center, pill CTA right, likely sticky on scroll
+- **[9] Illustrated Animated Map of Kyiv, Ukraine. Landing Page.**: n/a — no visible navigation bar, scroll-arrow serves as only UI control
+- **[9] The XIX — Cinematic 3D Website & Promo Animation**: Horizontal fixed top — logo left, 3 center links (Zeno/Enterprise/Studios), Contact us + Sign in right, transparent bg over 3D scene
+- **[9] Mertana - Ski Brand**: Minimal — value props as horizontal nav items (Experience+, Consistency+, Quality+, Dedication+), no traditional nav bar visible
+- **[9] Fourmeta website: Future-ready digital experience**: Sticky top bar — logo left, text links center (Selected works, Insights, About us, Contacts), pill CTA right; alternate version has uppercase links
+- **[9] Product for a Productivity Product ✦ Daylier**: Horizontal top bar, logo + 4 text links + icon buttons + avatar dropdown, likely sticky on scroll
+- **[9] Stormie - Art Director Website Portfolio**: Minimal horizontal bar — [MENU] left, [CONTACT US] right, monospace uppercase, no scroll behavior visible
+- **[9] Origin creative landing page**: Horizontal top bar — numbered items (01 HOME, 02 SERVICES), brand left, social links right, likely fixed on scroll
+- **[9] XIX3D Website — Cinematic 3D Animation**: Minimal top bar — logo left, 'Contact us' + 'Sign in' right, likely fixed with backdrop-filter blur on scroll
+- **[9] Golf Club Landing Page Design**: Horizontal top bar, left-aligned links in uppercase 11px, centered logo, right CTA + hamburger, likely fixed on scroll with dark bg
+- **[9] Case Study: Landing Page for Creator Growth Platform**: Horizontal bar, logo left, parenthesized links center, white pill CTA right, likely sticky on scroll
+- **[9] Fourmeta services, but make them feel alive**: Fixed top bar — logo left, location+time metadata, centered nav links with superscript counters, pill CTA right
+- **[8] Baumkontrolle im Netz - Web Design**: Horizontal top bar, logo-left, links-center (Leistungen, Workshops, Über mich, Öffentlichkeitsarbeit, Shop), lime CTA-right, likely sticky on scroll
+- **[8] Epitope — Biotech Visual Identity**: Horizontal bar, logo left, 4 text links center, pill CTA right, likely sticky on scroll
+- **[8] Kaisen Ramen — Motion-Driven Landing Page 🍜**: Minimal — hamburger icon top-left, cart/bag icon top-right, both in rounded square containers ~48px, likely fixed
+- **[8] Fine Dine Club Website | Selected Screens**: Minimal fixed top bar — logo center-left, MENU label + hamburger lines top-right, PREV/NEXT side navigation for slider
+- **[8] Modern Minimalist Blockchain UI**: Horizontal bar, logo left, 4 text links center, black solid CTA right, likely sticky on scroll
+- **[8] MVRDP — Architectural Visualization Concept**: Sticky top bar, logo left, text links center (About Us, Works, Services, Studios, Blog), black pill CTA right
+- **[8] ARCILLA: Luxury Residential Masterpiece**: Minimal — only 'TIMELESS NEW FARM' top-left as location badge, no traditional nav visible
+- **[8] Clearing. – Visual Identity**: Horizontal top bar, logo left, centered links (Home, Methods▾, Deep Focus, Plans, Journal), pill CTA right, likely fixed on scroll
+- **[8] Herbal therapist website**: Horizontal top bar, logo left, text links center, pill CTA right, search icon — likely sticky
+- **[8] Luméa Design Studio**: Horizontal top bar, logo left, 4 links right in 3 columns, active state = vermillion + underline, sticky unclear
+- **[8] Architecture Studio Website — Modern Web Design Concept**: Bottom-anchored bar with pill buttons left (Главная, О бюро), centered logo, right (Контакты, Связаться) — sticky footer-nav pattern
+- **[8] WSI Website Design**: Sticky horizontal bar — logo left, dropdown nav center (Solutions, Markets, Products, Company), utility links right (REPORTING, SDS with external arrows), blue solid Contact CTA
+- **[8] FundOnion — Web Design. Main Pages & Digital Experience Design**: Sticky horizontal bar — logo left, text links center, user icon + teal pill CTA right; collapses to hamburger (+) icon on mobile
+- **[8] [Case Study] B2B Website Design for Clearbit**: Horizontal sticky nav, logo left, 5 text links center (3 with dropdowns), Login + Get Started right, white bg
+- **[8] Finance SaaS Landing Page | Finance App**: Sticky horizontal bar, logo left, pill-shaped nav group center with 4 links, Log in + Get Started right, white bg with subtle border
+- **[8] UNUS Landing page 3D web design and icons**: n/a — not visible in UNUS screenshots; reference boards show floating pill nav with logo left, links center, CTA right
+- **[8] Zyron – Athletic Gear Website**: Horizontal sticky nav — logo left, 5 text links center with dropdowns, outline SHOP NOW button right, thin divider line below
+- **[8] Fourmeta: Conversion-driven website design**: Horizontal sticky bar — logo left, breadcrumb (— ABOUT), centered nav links (SERVICES+, ABOUT, WORKS, INSIGHTS, CONTACT), right CTA button, uppercase small caps
+- **[8] Mindbloom — Self-Development App & Learning Platform**: Horizontal top bar — logo left, 2 text links center, pill login + icon button right, likely sticky
+- **[8] Wearable Tech Landing Page**: Sticky horizontal bar, white bg, logo left, text links center, search+cart+CTA right, likely hides on scroll-down
+- **[8] AI Travel Landing Page | Smart Trip Planning Website**: Vertical sidebar nav on left (RTL), 4-5 links stacked, logo top-right, CTA button top-left, likely fixed on scroll
+- **[8] Arbitra - AI Investment - Homepage**: Fixed top bar — logo left, 5 text links center, ghost Sign In button right, announcement banner above with dismiss X
+- **[8] Eivic - Skincare e-commerce**: Horizontal top nav, text links (Home, Treatment, Product, Marketplace), no scroll behavior visible, minimal with brand center-aligned
+- **[8] Schwartz ™ - Real Estate Landing Page**: Horizontal top bar with text links (Studios, Services, Projects, Philosophy, About Us) + CONTACT US with arrow icon, likely sticky on scroll
+- **[8] Sales CRM Email Composer AI Powered Writing UX | Closr**: Fixed top bar with breadcrumb (Contacts / Mike Banner), search with ⌘K shortcut, icon actions (mail, calendar, bell), Actions dropdown, Import, Create Contact CTA
+- **[8] March - UI UX Design and Product Design Monthly Recap Motion**: Minimal top bar with logo left, text links center, CTA button right — likely sticky on scroll
+- **[8] Website for a Healthcare App ✦ Elara**: Horizontal top bar, logo left, pill-shaped nav links center, search+hamburger right, likely sticky on scroll
+- **[8] Genesis Kit - Travel Landing Page**: Floating transparent nav with logo left, dropdown links center, pill CTA right — likely sticky on scroll
+- **[8] FAQs — Untitled UI**: Sticky top bar, logo + horizontal links + Features dropdown + Log in + View demo (ghost) + Get started (solid purple), collapses to hamburger on mobile
+- **[8] Landscape Design Landing Page — GreenScape**: Sticky top bar, semi-transparent bg (backdrop-filter:blur), logo left, 4 links center, pill CTA right
+- **[8] Basketball Club Website – PlayHoops**: Fixed top bar, dark semi-transparent bg, pill-shaped nav links, logo left, CTA button right, likely backdrop-filter blur
+- **[8] Beauty App Landing Page**: Fixed top bar — hamburger+MENU left, centered logo, pill CTA right with Apple icon — likely sticky on scroll
+- **[8] Virella - Greentech Analytics Landing Page Design**: Horizontal top bar, logo center, 4 text links left, pill CTA right, likely sticky on scroll with backdrop-filter blur
+- **[8] Jewelry E-Commerce Website Tashola**: Minimal sticky top bar: left-aligned text links (uppercase, spaced), centered logo, right-aligned icon trio (search, account, cart)
+- **[8] Arbitra - AI Investment - Integration**: Sticky top bar with logo, 5 text links (Products dropdown), ghost Sign In button, dark bg with announcement banner above
+- **[8] Fashion Brand Landing Page Design**: Fixed dark bar, logo left, 3 text links center, cart icon right, collapses to hamburger on mobile
+- **[8] Hotel Booking Website**: Horizontal bar, dark bg, logo left, 5 text links center, pill CTA + arrow circle right, likely sticky on scroll
+- **[8] Markus Bernhardt® — Editorial Website**: Minimal top bar — logo left, 3 text links right (About, Works, Contact), comma-separated, likely sticky on scroll
+- **[8] UI-UX for Tech**: Horizontal top bar, logo center (Touch Bits) or left (Cryptify), pill-shaped active state, Login/Register outlined button, sticky likely
+- **[8] We're selected as Top Web Design Agency**: Minimal sticky — logo center, Menu text left, CTA text right, dark transparent bg
+- **[8] UI-UX for Finance**: Left sidebar vertical nav with icon+label, active state green highlight bar + colored text; top horizontal tabs on card settings
+- **[8] UI-UX for Blockchain & Cryptocurrency**: Horizontal sticky nav, logo center, dropdowns left (Personal/Business/Company), utility right (Help/Blog/Lang), ghost Sign In + outlined Sign Up buttons
+- **[8] Creative Agency Landing Page**: Minimal top bar with logo-mark left, [Project] center, [C-203] right, hamburger icon — likely fixed on scroll
+- **[8] Rebranding, Custom artwork, Web Design, UI Ux, AI SaaS Web app.**: n/a — these are presentation/marketing assets, no nav visible
+- **[8] Ven - Creative Agency Landing Page**: Fixed top bar, logo left, 'Contact Us' + hamburger menu right, minimal dark transparent bg
+- **[8] Projie - Project Management SaaS Landing Page**: Sticky horizontal bar, logo left, 5 nav items center (dropdowns on Products/Solutions/Resources), blue pill CTA right
+- **[8] Arbitra - AI Investment - Product Page**: Sticky top bar with logo, 5 text links (Products dropdown), Sign In ghost button, green announcement banner above
+- **[8] XIX3D Automotive Visualization — 3D Website Design & Cinematic A**: Horizontal fixed top — logo left, 3 links center, contact+sign-in right, likely transparent on scroll
+- **[8] Medicom — Healthcare Platform UI/UX Design**: Horizontal pill-shaped nav items with rounded-full borders, logo left, auth right, likely sticky on scroll
+- **[8] Yukiyo — Eyewear Ecommerce Minimalist Fashion Website UI Design**: Fixed top bar — logo left, 4 text links center (ABOUT, PRODUCTS, BENEFITS, CONTACT US), heart/account/cart icons right, likely transparent-to-solid on scroll
+- **[8] ClubV - Hero design**: Minimal fixed corners — logo top-left, Menu/Language/Contact top-right, no scroll behavior visible
+- **[8] AI Interior Landing Page✦ Luxury AI**: Sticky top bar: logo left, hamburger icon + pill 'Get Started' button right, likely backdrop-filter on scroll
+- **[8] 🎾Monarch Padel Club – Sports Club Landing Page**: Sticky horizontal bar with logo left, 7 text links center, lime pill CTA right, contained within rounded border frame
+- **[8] 💰 Finvexa — Fintech Mobile App Landing Page**: Horizontal sticky nav — logo left, 5 text links center, pill CTA right with arrow icon, white bg
+- **[8] Ai music website design web app**: Vertical icon sidebar, 60px wide, grey background, icon-only with active state highlight, fixed position
+- **[8] Home Decor Website Design - Furniture Ui**: Horizontal pill-nav with dot indicator on active item, centered links, right-side icons (heart, cart with badge, avatar with name), sticky likely
+- **[8] AI VR Landing Page ✦ Cortex XR**: Horizontal bar, MENU left with curly-brace items, SINCE/PRODUCT right, no scroll behavior visible, uppercase labels
+- **[8] Commercial Solar Installers Website Design**: Sticky top bar, logo left, text links center with active pill highlight, CTA button right, dark bg
+- **[8] Premium Property Brand Design**: Minimal top-right: phone number + hamburger menu icon, fixed position, dark transparent bg
+- **[8] Website for a Frontier AI Video Brand ✲ MyNova**: Horizontal top bar, logo left, text links center, pill CTA right, likely sticky on scroll with backdrop-filter
+- **[8] Website Feature Section Design**: n/a — no visible navigation in screenshots
+- **[8] Ivory & Gold Landing Page**: Sticky horizontal bar, logo left, 4 text links center (uppercase spaced), cart + account icons right, clean white/cream bg
+- **[8] Hiya - Kids Multivitamin Website**: Sticky top bar with pill-shaped nav items (SCIENCE, SHOP, INGREDIENTS), logo center, search/login/cart right, announcement ticker above
+- **[8] 3D Editor Landing Page Concept**: Sticky horizontal bar, logo left, 4 text links center, pill-outline Sign In right, dark bg with subtle border-bottom
+- **[8] Sseraskin - Skincare E-Commerce Website UI Figma**: Horizontal inline nav, left-aligned links, centered logo, right search + bag, likely sticky on scroll
+- **[8] Norde: Sustainability-driven AI - Website Landing Page**: Floating pill navbar, dark bg (#080C03), rounded-full, logo left, 4 links center, 'Get Started' button right, likely sticky on scroll
+- **[8] Arbitra - AI Investment - UX Highlight**: Sticky top bar with logo left, text links center (Products dropdown, Integrations, Pricing, Use Cases, Market), outlined Sign In button right
+- **[8] Architecture Firm Website – Dark Green Bold Landing Page UI**: Horizontal top bar — logo left, 'Let's Talk' pill button + hamburger right, likely sticky on scroll
+- **[8] Hoodie Drop — Website Hero Concept**: Horizontal top bar, logo left, 4 text links center-left, utility icons (search/account/cart) right, no scroll behavior shown
+- **[8] Spektral – 3D Production Studio Landing Page Design**: Fixed top bar, logo center, MENU left, CALL ME BACK right, all uppercase mono, minimal
+- **[8] AI Landing Page for NDIS & HCP Management Software**: Sticky horizontal bar, logo left, dropdown nav center, social icons + demo link + green pill CTA right
+- **[8] Landing Page for Residential Complex**: Minimal top bar — logo left, 'Get in touch' + 'Menu' pill button right, no scroll behavior visible
+- **[8] Verdana — Focus-Driven Landing Page**: Floating pill nav with backdrop-filter blur, logo left, 4 text links center in rounded container, coral CTA right
+- **[8] URBANTH — Streetwear Fashion Website**: Horizontal top bar — logo left, 4 text links center, pill cart button right, sticky likely
+- **[8] Website for a Creative Digital Agency ✲ Motivo**: Horizontal top bar, logo left, 4 text links center, CTA link right with underline, likely fixed on scroll
+- **[8] ClubV - Full page showcase**: Horizontal top bar — logo left, language selector center-right, Contact + Menu right, sticky likely
+- **[8] CASA NERO – Fashion Website Design (Editorial Landing Page)**: Fixed top bar, logo left, 4 text links center (uppercase tracking), season label right, minimal ~56px height
+- **[8] Cryonix — AI Crypto App Landing Page**: Fixed top bar, logo left, 5 text links center, Log in text + Get Started pill CTA right, likely backdrop-filter on scroll
+- **[8] The XIX3D Website — 3D Animation, automotive landing page**: Minimal top bar — logo left, 'Contact us' text link + 'Sign in' outlined button right, no scroll behavior visible
+- **[8] Martel: Photography Course Landing Page (Dark UI)**: Horizontal bar, logo left, 6 text links center, pill outline CONTACT button right, likely fixed on scroll
+- **[8] Yukiyo — Minimal Eyewear Ecommerce Fashion Website Product Page**: Fixed top bar, logo left, 4 links center (ABOUT, PRODUCTS, BENEFITS, CONTACT US), uppercase spaced, transparent over hero
+- **[8] AURIX — Digital Banking Platform Website**: Horizontal top bar, pill-shaped active state on Home, logo left, CTA right, likely sticky on scroll
+- **[8] Furniture Landing Page ✦ Skogliving**: Minimal top bar: MENU (left) + CONTACT US pill button (right), no scroll behavior visible
+- **[8] Renalta Legacy Concept**: Horizontal top bar, logo left, 3 text links center, pill CTA right, likely sticky on scroll
+- **[8] Rukous Studio — Studio Website Exploration**: Sticky top bar, dark glass surface, hamburger + logo center + CTA right, ~56px height
+- **[8] Website for a Sports Product ✲ Lineout**: Horizontal bar — logo with divider, 3 text links, ghost Sign Up button right-aligned, likely fixed on scroll
+- **[8] VAST Data — AI 3D Website Animation**: Horizontal sticky nav, logo left, 4 text links center, outlined CTA right, likely transparent-to-solid on scroll
+- **[8] Earth Day Brand Recognition — Sustainable Web Design**: Horizontal top bar, left-aligned text links (About, Why Apply, Criteria, Process, Contact), right-aligned green pill CTA 'Apply Now', likely fixed on scroll
+- **[8] Landing page web design 3D consepts**: Horizontal sticky bar, logo-left, links-center, CTA-right, semi-transparent bg with backdrop-filter on dark themes, pill-shaped on etail.me
+- **[8] Yukiyo- Glasses Ecommerce Conversion Product Page Website Design**: Fixed top bar, logo left, text links center (ABOUT, PRODUCTS, BENEFITS, CONTACT US), utility icons right (heart, user, cart), clean white bg
+- **[8] Nexora - Probiotic Supplement Website**: Horizontal top bar — logo left, text links center (Shop▾, Science, Bestsellers▾, Our Story), dark green CTA button right, thin border-bottom separator
+- **[8] Agenji - Creative Agency Website Design**: Pill-shaped container nav with white bg, horizontal links, red CTA + arrow icon circle, likely sticky on scroll
+- **[8] Fine Dining Restaurant Website Concept 🍷**: Horizontal bar, logo left, 3 text links right (uppercase spaced), last link accent-colored, likely sticky on scroll
+- **[8] Website for a Healthcare Company ✦ Empath**: Horizontal sticky bar — logo left, 3 text links center, language selector + CTA button right, dark bg on Hospity variant
+- **[8] Digital Agency Website**: Pill-shaped container nav with active state highlight, logo left, CTA right with arrow icon, hamburger menu
+- **[8] Architrave - Real Estate Landing Page**: Horizontal bar, left-aligned links (About/Properties/Testimonials), center logo, right FAQ+Contact, likely sticky on scroll
+- **[8] Skincare eCommerce Experience | Landing Page Design**: Horizontal top bar, logo left, 4 text links center (SHOP/PHILOSOPHY/GALLERY/JOURNAL), user icon + cart pill right, likely sticky
+
+## Footer Patterns
+
+- **[9] Maria Eli: Fused Identities — Artist Portfolio**: Minimal — location info, CTA button, small descriptive text
+- **[9] Editorial Skincare Web Explorations with Golden Canyon Grid**: Ticker-style bottom bar — 'Nourishing — Sustainable' left, 'EST 1875' center, 'Coll. N°01 — Hydration Line' right, connected by em-dash rules
+- **[9] Interval. Cafe Brand Identity. Typography Layouts & Visuals.**: Minimal — social links left, contact info right, single horizontal bar
+- **[9] PAWS & CO. — Luxury Pet Hotel Website**: n/a — not visible in screenshots
+- **[9] The XIX — Cinematic 3D Website & Promo Animation**: n/a — only hero visible
+- **[9] Fourmeta website: Future-ready digital experience**: Minimal — likely dark with logo and links, 'FULL-SERVICE DIGITAL POWERHOUSE' tagline visible at bottom-left
+- **[9] Origin creative landing page**: Dark footer with giant clipped 'origin' wordmark, navigation links, copyright, contact email in green, cross-shaped decorative divider
+- **[9] XIX3D Website — Cinematic 3D Animation**: Minimal — copyright, legal links (License, Privacy, Terms), social icons (Telegram, X, LinkedIn) as dark rounded squares
+- **[9] Golf Club Landing Page Design**: Dark strip with left legal links (COOKIE, TERMS, PRIVACY), centered copyright, right location — minimal single-line
+- **[9] Case Study: Landing Page for Creator Growth Platform**: Dark bg, large brand wordmark, 4-col link grid in parenthesized style, privacy/terms row, contact form integrated
+- **[9] Fourmeta services, but make them feel alive**: Minimal — URL bar shows link on hover, no visible footer in viewport
+- **[8] Fine Dine Club Website | Selected Screens**: n/a — not visible in provided screens
+- **[8] MVRDP — Architectural Visualization Concept**: 3-column link grid (Service, Project, Resources), large logo lockup bottom-left, social links (Instagram, X, LinkedIn) bottom-right, copyright
+- **[8] Herbal therapist website**: Decorative botanical vine illustration with navy swirl ornament — partial view
+- **[8] Luméa Design Studio**: Minimal — logo left, 3 link columns center, social links right, warm bg continuation, 'Contact' rotated vertically on right edge
+- **[8] Architecture Studio Website — Modern Web Design Concept**: Integrated into bottom nav bar — logo centered, nav links as pills, no separate footer section

@@ -1,0 +1,261 @@
+# Animation & Interaction Patterns
+
+1913 total interactions extracted from 399 projects. Categorized by type.
+
+## Scroll Animations (667 total, 537 from 7+)
+
+- **[9]** Scroll-triggered headline reveals → GSAP ScrollTrigger with clip-path or translateY
+- **[9]** Image parallax on scroll → transform:translateY with scroll listener or GSAP
+- **[9]** Text-image layered parallax → different scroll speeds via GSAP ScrollTrigger
+- **[9]** scroll-state-transition: photo→wireframe hero morph → Framer-Motion or GSAP ScrollTrigger
+- **[9]** parallax-subtle: floating annotations move at different scroll speeds → transform3d
+- **[9]** fade-in-sections: content cards fade up on scroll entry → IntersectionObserver + opacity/translateY
+- **[9]** Horizontal image carousel/slider → Framer-Motion drag or scroll-linked transform
+- **[9]** Scroll-triggered text fade-in → Framer-Motion whileInView
+- **[9]** Parallax depth on building render → scroll-linked translateY at different rates
+- **[9]** Bottom ticker bar subtle parallax on scroll → Intersection Observer
+- **[9]** Tile hover-reveal of micro-data labels → CSS opacity transition
+- **[9]** Scroll-triggered tile entrance animations → GSAP stagger or Framer Motion
+- **[9]** Hero parallax on applied mockup pages → CSS transform:translateY with scroll listener
+- **[9]** Nav background blur on scroll → backdrop-filter:blur with scroll threshold
+- **[9]** Hero image parallax-on-scroll — GSAP or Framer-Motion translateY offset
+- **[9]** Headline text reveal — clip-path or opacity stagger animation on load
+- **[9]** Avatar stack hover-expand — negative margin reduction on hover, revealing full avatars
+- **[9]** Scroll-triggered hero-to-map transition — parallax dissolve → GSAP ScrollTrigger
+- **[9]** Potential scroll-triggered panel reveals — GSAP ScrollTrigger
+- **[9]** Subtle parallax on foreground/background illustration layers — CSS transform3d
+- **[9]** Scroll-driven 3D camera animation — GSAP ScrollTrigger + Three.js
+- **[9]** Slide pagination (1/4) — section-based scroll snapping
+- **[9]** Possible car rotation/interaction — raycasting or scroll-linked rotation
+- **[9]** Hero parallax text-behind-image — GSAP ScrollTrigger
+- **[9]** Ticker bar horizontal scroll — CSS animation or GSAP marquee
+- **[9]** Category card hover reveal color from grayscale — CSS filter transition
+- **[9]** Scroll-triggered section fade-in — IntersectionObserver or GSAP
+- **[9]** Scroll-triggered section reveals → GSAP ScrollTrigger with staggered opacity/translateY
+- **[9]** 3D mockup parallax on hero → transform:translate3d tied to scroll position
+- **[9]** Scroll-parallax background image reveal behind content panel → GSAP ScrollTrigger or Framer scroll transforms
+- **[9]** Ghost watermark text fade/slide on scroll → opacity + translateY animation
+- **[9]** Horizontal progress line animation on section enter → width transition on scroll
+- **[9]** Section number counter animation on scroll into view → GSAP or intersection observer
+- **[9]** scroll-triggered section reveals → GSAP ScrollTrigger or Framer-Motion useInView
+- **[9]** parallax depth on atmospheric gradient layers → transform:translateY with scroll offset
+- **[9]** Scroll-snap carousel between portfolio pieces → GSAP ScrollTrigger with snap
+- **[9]** Parallax depth on 3D hero elements → transform: translate3d on scroll
+- **[9]** Nav fade-in on scroll → IntersectionObserver + opacity transition
+- **[9]** Scattered photos parallax on scroll → GSAP ScrollTrigger with varying speeds per element
+- **[9]** Course card hover/reveal on aerial section → opacity + transform transition
+
+## Hover Animations (570 total, 413 from 7+)
+
+- **[9]** CTA circle hover scale → transform:scale(1.1) with transition
+- **[9]** hover-arrow-slide: CTA arrows animate right on hover → CSS transform
+- **[9]** glassmorphic-hover: card overlay opacity shifts on hover → backdrop-filter transition
+- **[9]** Button hover fill transition → CSS transition on background-color
+- **[9]** Diamond chevron arrows hover scale/opacity → CSS transition
+- **[9]** Underline CTA hover slide-in → CSS border-bottom with transform
+- **[9]** CTA button hover-scale — transform: scale(1.05) with transition
+- **[9]** Feature pills hover-fill — background-color transition on hover
+- **[9]** Landmark hover tooltips — scale-up with info popup → CSS transform + opacity transition
+- **[9]** Zoom-on-hover for detail appreciation — CSS scale transform
+- **[9]** Hover states on nav links — opacity or underline transition
+- **[9]** Bento card hover → scale(1.02) with transition:transform 0.4s ease
+- **[9]** Nav CTA pill hover → background-color transition with slight scale
+- **[9]** Awards row hover → highlight row with opacity shift and arrow animation
+- **[9]** Metric cards → hover subtle lift/glow intensification, CSS transition
+- **[9]** Chart bars → hover tooltip with exact values, CSS/JS
+- **[9]** Image hover scale or filter shift on portfolio thumbnails → CSS transform:scale with transition
+- **[9]** hover scale on portfolio cards → CSS transform:scale(1.02) with transition
+- **[9]** pill tag active state toggle → green fill on click/hover
+- **[9]** Hover glow on nav links → text-shadow transition
+- **[9]** Hover on blog cards — arrow circle rotation or scale
+- **[9]** Service list hover/expand — accordion with highlight state
+- **[9]** Card hover depth shift → transform: translateZ() on hover
+- **[8]** CTA hover state → background-color transition
+- **[8]** Feature cards hover lift → transform:translateY(-2px) + box-shadow transition
+- **[8]** CTA buttons hover fill/darken → background-color transition 200ms
+- **[8]** Hover on CTA: scale + warm glow box-shadow — CSS transition
+- **[8]** nav-cta-hover → scale(1.02) + box-shadow transition
+- **[8]** Hover state on case study cards → opacity or scale transition
+- **[8]** Nav CTA hover → background color invert or scale
+- **[8]** Button hover state — likely opacity shift or background-color transition — CSS transition
+- **[8]** Button hover fill transition → CSS transition on background-color 200ms ease
+- **[8]** Card hover subtle lift → transform:translateY(-4px) + box-shadow transition
+- **[8]** Button hover fill transition → CSS transition on background-color
+- **[8]** Nav link underline on hover → CSS border-bottom or text-decoration transition
+- **[8]** Dropdown menu on Consultations → CSS :hover or JS toggle
+- **[8]** Card hover — subtle lift or border glow on project info card
+- **[8]** Button hover — orange fill transition on outline buttons, scale on primary
+- **[8]** hover-product-scale subtle zoom on product images → CSS transform
+- **[8]** Nav dropdown menus on hover — CSS or JS with transition timing
+
+## Entrance Animations (54 total, 46 from 7+)
+
+- **[9]** Flower motion-trail animation on hero load → custom WebGL or Framer-Motion stagger with clip-path
+- **[9]** Hero text staggered entrance on load → GSAP SplitText or Framer Motion
+- **[9]** Animated landmark entrances — buildings pop/grow in → GSAP stagger or Lottie
+- **[9]** Hero text fade-in on load → GSAP timeline or Framer Motion
+- **[8]** Entrance animation: bowls slide/scale in from edges with stagger — GSAP timeline
+- **[8]** hero-entrance-stagger → Framer-Motion variants with staggerChildren
+- **[8]** Image mosaic staggered entrance — GSAP stagger with opacity + translateY
+- **[8]** staggered-entrance products appear left-to-right → Framer-Motion staggerChildren
+- **[8]** Hero device mockup entrance animation — Framer-Motion or GSAP with 3D transforms
+- **[8]** Hero headline staggered entrance → Framer-Motion staggerChildren
+- **[8]** Staggered headline entrance → Framer-Motion variants with delay
+- **[8]** Hero data card slide-in on load → Framer-Motion initial/animate
+- **[8]** Hero headline stagger-in → Framer-Motion or GSAP SplitText
+- **[8]** Fade-up entrance on headline and description — Framer Motion or GSAP
+- **[8]** Loading screen logo animation → GSAP timeline with scale + opacity
+- **[8]** Hero floating cards entrance → staggered fade-in + translateY on load, Framer-Motion
+- **[8]** Card entrance animation → GSAP timeline with rotation + opacity
+- **[8]** Hero text stagger-in on load → Framer-Motion or GSAP timeline
+- **[8]** Floating card entrance with staggered fade-up — Framer Motion variants
+- **[8]** Hero entrance stagger — Framer-Motion variants with delay cascade
+- **[8]** Product jar entrance scale/fade → GSAP or Framer Motion
+- **[8]** Hero entrance — staggered fade-up on headline lines via GSAP/Framer-Motion
+- **[8]** Brain scan rotation/loading — 100% SCANNED progress animation → CSS keyframes or GSAP timeline
+- **[7]** Hero entrance → staggered fade-up on headline words, Framer-Motion
+- **[7]** Process tags staggered entrance — CSS animation-delay
+- **[7]** AI panel product cards → slide-in from right, Framer-Motion stagger
+- **[7]** Product bottle entrance — scale-up fade-in on load → Framer-Motion
+- **[7]** hero-badge-pills → subtle entrance animation, Framer-Motion stagger
+- **[7]** Breadcrumb arrows sequential fade-in → staggered Framer-Motion
+- **[7]** View more activity load-more at feed bottom — fade-in new items
+- **[7]** Hero text stagger-in on load → Framer-Motion or CSS @keyframes
+- **[7]** Progress bar fill animation on loading screen → CSS transition width or Framer Motion
+- **[7]** Rating badge entrance — fade-up on load, Framer-Motion initial/animate
+- **[7]** Hand-drawn oval SVG draw-on — stroke-dashoffset animation on page load
+- **[7]** car-entrance → GSAP slide-in with volumetric light fade
+- **[7]** Hero text fade-in on load → Framer-Motion or GSAP timeline
+- **[7]** Pagination page change with card fade-in → opacity + translateY stagger
+- **[7]** Pill tags fade-in stagger on load → Framer-Motion
+- **[7]** Upload image → canvas processing pipeline — FileReader + Canvas drawImage
+- **[7]** Modal open/close → fade + scale entrance — Framer-Motion
+
+## Page Transition Animations (211 total, 142 from 7+)
+
+- **[9]** Page transitions between sections → Framer-Motion AnimatePresence or Barba.js
+- **[9]** Carousel slide transition with counter animation (01→02) → GSAP timeline
+- **[9]** Tab switching with underline slide — CSS transition on pseudo-element
+- **[9]** Pagination arrows on daily goals → slide transition, Framer-Motion
+- **[9]** Pagination counter animation → number transition with CSS or Framer Motion
+- **[8]** Hero slide transitions with PREV/NEXT — GSAP or Swiper.js with custom fade/scale
+- **[8]** FAQ accordion expand/collapse with +/- rotation — GSAP or CSS max-height transition
+- **[8]** Sidebar FAQ category switch with line indicator slide — CSS transition on ::before pseudo-element
+- **[8]** Accordion expand/collapse with smooth height transition → GSAP or CSS transition
+- **[8]** Catalogue filter switching with image grid transition — likely crossfade or layout animation
+- **[8]** Heart icon toggle on catalogue cards — CSS transition on fill/color
+- **[8]** Page transition — likely smooth route transitions between projects
+- **[8]** Form step transitions — slide/fade between wizard steps → Framer-Motion AnimatePresence
+- **[8]** Chip-select toggle — teal fill on selection with smooth background transition → CSS transition
+- **[8]** nav-dropdown on Solutions/Company/Resources → CSS transition or Radix Popover
+- **[8]** Smooth page transitions between sections → GSAP or Barba.js
+- **[8]** Category tab switching with underline active state → CSS transition on border-bottom
+- **[8]** Testimonial carousel prev/next → Framer-Motion slide transition
+- **[8]** Tab switching — active tab underline transition, CSS transition
+- **[8]** Accordion collapse — Contact Details / Communication Preferences toggle, CSS max-height transition
+- **[8]** Carousel arrow navigation with smooth slide transition → Swiper.js or custom
+- **[8]** accordion-expand-collapse → CSS transition on max-height, icon rotation
+- **[8]** Tab switching on services section → content slide/fade transition, Framer-Motion
+- **[8]** Tab category filtering → fade/slide card transitions → Framer-Motion AnimatePresence
+- **[8]** FAQ accordion expand/collapse → height animation → Radix Accordion + CSS transition
+- **[8]** Page transition between home/works/project — Framer page transitions or Barba.js
+- **[8]** Nav link underline on active page — text-decoration with currentColor
+- **[8]** Tab switching on Cryptify News/Security/Investing → CSS transitions + state management
+- **[8]** Account pill selector at bottom → toggle state with transition
+- **[8]** Accordion expand/collapse — height transition on expertise items
+- **[8]** Tab switching on features section → opacity + translateY transition, Framer-Motion
+- **[8]** announcement-bar dismiss → CSS transition on height/opacity
+- **[8]** nav-dropdown on Products → transform: translateY with opacity transition
+- **[8]** 3d-configurator — interactive WebGL car rotation/color change on product pages, Three.js
+- **[8]** Tab switching on Overview/Anatomy/Insights — CSS transition on active state
+- **[8]** Accordion expand/collapse on membership perks → CSS max-height transition or Framer-Motion AnimatePresence
+- **[8]** Category pill active state toggle → CSS transition on background/border
+- **[8]** Accordion expand/collapse → Framer-Motion or CSS max-height transition
+- **[8]** Hamburger menu open/close → CSS transform + opacity transition
+- **[8]** Carousel left/right arrows → state-managed slider with transition
+
+## Micro Animations (98 total, 62 from 7+)
+
+- **[9]** Pause button on Deep Work card → timer state toggle with animation
+- **[9]** Nav link superscript counters → CSS ::after pseudo-element with content
+- **[8]** stat-counter-animate → useInView + animated number increment
+- **[8]** Nav dropdown on Methods → CSS/JS dropdown with fade-in
+- **[8]** Tab switching on features section → state toggle with content crossfade
+- **[8]** announcement-bar-dismiss — X button removes banner → React state toggle with height animation
+- **[8]** Stats counter animation → countUp.js or Framer-Motion useMotionValue
+- **[8]** FAQ accordion expand/collapse → height:auto animation, Framer-Motion AnimatePresence
+- **[8]** Project carousel arrows with counter → state-managed carousel with AnimatePresence
+- **[8]** FAQ accordion expand/collapse → height animation with overflow:hidden
+- **[8]** Accordion expand for workspace features → height animation with overflow:hidden
+- **[8]** announcement-banner-dismiss — close button on top banner → state toggle
+- **[8]** accordion-faq-expand → height animation with overflow:hidden
+- **[8]** accordion expand/collapse in FAQ → Framer-Motion AnimatePresence
+- **[8]** Stats counter animation → countUp.js or Framer-Motion useInView
+- **[8]** Accordion expand/collapse on product architecture — CSS max-height or GSAP
+- **[8]** Size/color toggle — instant state swap with active border fill
+- **[7]** Accordion expand/collapse on PDP → height animation — Radix Accordion
+- **[7]** Filter pill active state toggle → background-fill swap on click, React state
+- **[7]** Nav hamburger toggle on mobile → JS click handler with CSS transform
+- **[7]** Pricing monthly/annually toggle → animated pill slider with price crossfade
+- **[7]** FAQ accordion expand/collapse → Framer-Motion AnimatePresence
+- **[7]** Wishlist heart toggle → fill animation, Framer-Motion scale
+- **[7]** accordion-faq expand/collapse → Framer-Motion AnimatePresence
+- **[7]** pricing-toggle-switch → CSS + JS state toggle
+- **[7]** nav-dropdown-menus → CSS or Radix dropdown
+- **[7]** date-cell-tap → blue ring highlight, state toggle
+- **[7]** Pricing toggle → monthly/yearly switch with price animation, Framer-Motion
+- **[7]** FAQ accordion expand/collapse → Framer-Motion AnimatePresence or Radix Accordion
+- **[7]** Call outcome expandable chevron — rotate transform on toggle
+- **[7]** color-swatch-select with border highlight → state-driven className toggle
+- **[7]** real-time-percentage-update → animated number counter for charging %
+- **[7]** Percentage button selection → active state toggle
+- **[7]** faq-accordion-expand → smooth height animation → CSS max-height or Framer-Motion AnimatePresence
+- **[7]** Billing toggle switch → monthly/annual price swap with number animation — Framer-Motion
+- **[7]** Wishlist heart toggle animation → CSS scale keyframe
+- **[7]** accordion-expand — FAQ section expand/collapse → height animation with overflow:hidden
+- **[7]** Accordion expand/collapse for services and FAQ — Framer Motion AnimatePresence
+- **[7]** Diamond pagination active state toggle → CSS class swap
+- **[7]** FAQ accordion expand/collapse — CSS or JS toggle
+
+## Other Animations (313 total, 196 from 7+)
+
+- **[9]** Map pan/zoom — touch/mouse drag with inertia → custom JS or library like Panzoom
+- **[9]** Metro line draw-on animation — SVG stroke animation → stroke-dasharray/dashoffset
+- **[9]** Nav transparency over 3D — backdrop-filter or pure transparency
+- **[9]** Timeline task pills → likely draggable/resizable, custom drag handler or dnd-kit
+- **[9]** star sparkle rotation → CSS @keyframes rotate infinite
+- **[9]** Rotating 'VIEW MORE' circular badge → CSS infinite rotation animation
+- **[9]** Testimonial carousel with arrow navigation — Embla or Swiper
+- **[8]** Hero 3D visual subtle rotation or float → Three.js/Spline
+- **[8]** Carousel arrows suggest horizontal product slider — Framer-Motion or GSAP
+- **[8]** Questionnaire category selection with left-panel image swap — state-driven with crossfade
+- **[8]** Hero project carousel/slider — likely GSAP or Swiper with crossfade
+- **[8]** Currency input formatting — real-time £ formatting as user types → React controlled input
+- **[8]** Swipe horizontal carousel on feature cards → Framer-Motion drag gestures or Swiper.js
+- **[8]** Number count-up animation (88.2) → Framer-Motion useMotionValue or CountUp.js
+- **[8]** phone-mockup-float — subtle floating animation on device mockups → CSS keyframe or Framer-Motion
+- **[8]** Testimonial carousel with dot pagination → Framer-Motion or Swiper.js
+- **[8]** AI word suggestion popover — appears on text selection with fade-in, Framer-Motion
+- **[8]** Contact chip dismiss — X button removes chip with exit animation, Framer-Motion
+- **[8]** Gradient wave subtle animation → CSS @keyframes or SVG SMIL
+- **[8]** 3D carousel with perspective depth + blur on inactive cards → CSS transforms + JS carousel lib
+- **[8]** tab-switch → active state border/bg swap, likely client-side filter
+- **[8]** testimonial-carousel → left/right arrows cycle cards, likely Framer Motion or CSS
+- **[8]** chat-widget-open → FAB expands to chat panel, third-party (Intercom-style)
+- **[8]** Countdown timer live decrement → vanilla JS or React state
+- **[8]** Menu hamburger → slide-in overlay panel
+- **[8]** Logo bar → infinite horizontal marquee, CSS animation translateX
+- **[8]** Card carousel with left/right arrow navigation → Framer-Motion AnimatePresence
+- **[8]** Scale/rotate sliders updating card preview in real-time → React state + CSS transform
+- **[8]** Font selector grid with live preview panel → controlled component state
+- **[8]** Image thumbnail selection with active border highlight → CSS :checked pseudo-class or React state
+- **[8]** Nav arrow carousel slide → Framer-Motion AnimatePresence with slide variants
+- **[8]** Node-dot pulse → scale + opacity keyframe on connection points → CSS animation
+- **[8]** Avatar float → subtle translateY oscillation → CSS @keyframes
+- **[8]** Concentric-circle ripple → expanding opacity rings → CSS animation
+- **[8]** Marquee service ticker — infinite CSS translateX animation
+- **[8]** Play showreel button — likely opens modal/lightbox video player
+- **[8]** Carousel arrows for doctor cards — Framer-Motion or Swiper.js
+- **[8]** Stat number count-up animation — Framer-Motion useInView + animate
+- **[8]** Floating specialty tags gentle drift — CSS @keyframes or Framer-Motion
+- **[8]** Product carousel with arrow navigation and dot pagination → Swiper.js or custom GSAP
