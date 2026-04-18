@@ -1,6 +1,7 @@
 <div align="center">
 
 # design-you-need
+<img width="1280" height="640" alt="social-preview" src="https://github.com/user-attachments/assets/c9f4f9a8-1076-48a1-923a-8f5b7f5d164e" />
 
 ### Stop shipping AI slop. Start shipping designs that look like a human made them.
 
